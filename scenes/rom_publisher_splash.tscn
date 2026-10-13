@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/publisher_splash_970261.png" id="1_splash"]
+
+[node name="RomPublisherSplash" type="Node2D"]
+
+[node name="Screen" type="Sprite2D" parent="."]
+texture = ExtResource("1_splash")
+position = Vector2(128, 120)
+texture_filter = 1

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_bank18_sprite_palettes.png" id="1_palette_chart"]
+
+[node name="RomSpritePalettePreview" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+offset_right = 256.0
+offset_bottom = 240.0
+horizontal_scroll_mode = 3
+
+[node name="PaletteChart" type="TextureRect" parent="Scroll"]
+texture = ExtResource("1_palette_chart")
+texture_filter = 1

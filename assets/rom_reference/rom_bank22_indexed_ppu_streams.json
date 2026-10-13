@@ -1,0 +1,391 @@
+{
+  "source_prg_bank": 22,
+  "pointer_table_cpu": "$8028",
+  "record_count": 25,
+  "callback_path": "NMI at bank 60 $E8E0 requests bank $16 callback index 0; bank 22 $8003 indexes this table and invokes $805A.",
+  "cpu_window_mapping_assumption": {
+    "$8000-$BFFF": 22,
+    "$C000-$FFFF": 23
+  },
+  "records": [
+    {
+      "record_index": 0,
+      "pointer_table_cpu": "$8028",
+      "source_pointer_cpu": "$80A4",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$83EC",
+      "payload_bytes": 832,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg22_src_80a4_ppu_0800.bin",
+        "rom_prg22_src_80a4_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_80a4_ppu_0800.json"
+    },
+    {
+      "record_index": 1,
+      "pointer_table_cpu": "$802A",
+      "source_pointer_cpu": "$8558",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$8919",
+      "payload_bytes": 954,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_8558_ppu_0800.bin",
+        "rom_prg22_src_8558_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_8558_ppu_0800.json"
+    },
+    {
+      "record_index": 2,
+      "pointer_table_cpu": "$802C",
+      "source_pointer_cpu": "$890C",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$8BF2",
+      "payload_bytes": 735,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_890c_ppu_0800.bin",
+        "rom_prg22_src_890c_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_890c_ppu_0800.json"
+    },
+    {
+      "record_index": 3,
+      "pointer_table_cpu": "$802E",
+      "source_pointer_cpu": "$8C80",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$8FA2",
+      "payload_bytes": 795,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_8c80_ppu_0800.bin",
+        "rom_prg22_src_8c80_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_8c80_ppu_0800.json"
+    },
+    {
+      "record_index": 4,
+      "pointer_table_cpu": "$8030",
+      "source_pointer_cpu": "$9064",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$93DC",
+      "payload_bytes": 881,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_9064_ppu_0800.bin",
+        "rom_prg22_src_9064_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_9064_ppu_0800.json"
+    },
+    {
+      "record_index": 5,
+      "pointer_table_cpu": "$8032",
+      "source_pointer_cpu": "$9398",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$9800",
+      "payload_bytes": 1120,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg22_src_9398_ppu_0800.bin",
+        "rom_prg22_src_9398_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_9398_ppu_0800.json"
+    },
+    {
+      "record_index": 6,
+      "pointer_table_cpu": "$8034",
+      "source_pointer_cpu": "$980C",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$9A83",
+      "payload_bytes": 624,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_980c_ppu_0800.bin",
+        "rom_prg22_src_980c_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_980c_ppu_0800.json"
+    },
+    {
+      "record_index": 7,
+      "pointer_table_cpu": "$8036",
+      "source_pointer_cpu": "$9B50",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$9D5F",
+      "payload_bytes": 520,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_9b50_ppu_0800.bin",
+        "rom_prg22_src_9b50_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_9b50_ppu_0800.json"
+    },
+    {
+      "record_index": 8,
+      "pointer_table_cpu": "$8038",
+      "source_pointer_cpu": "$9EB4",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$A146",
+      "payload_bytes": 651,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_9eb4_ppu_0800.bin",
+        "rom_prg22_src_9eb4_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_9eb4_ppu_0800.json"
+    },
+    {
+      "record_index": 9,
+      "pointer_table_cpu": "$803A",
+      "source_pointer_cpu": "$A2A8",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$A694",
+      "payload_bytes": 996,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg22_src_a2a8_ppu_0800.bin",
+        "rom_prg22_src_a2a8_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_a2a8_ppu_0800.json"
+    },
+    {
+      "record_index": 10,
+      "pointer_table_cpu": "$803C",
+      "source_pointer_cpu": "$A72C",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$AB15",
+      "payload_bytes": 994,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_a72c_ppu_0800.bin",
+        "rom_prg22_src_a72c_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_a72c_ppu_0800.json"
+    },
+    {
+      "record_index": 11,
+      "pointer_table_cpu": "$803E",
+      "source_pointer_cpu": "$AB00",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$AE36",
+      "payload_bytes": 815,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_ab00_ppu_0800.bin",
+        "rom_prg22_src_ab00_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_ab00_ppu_0800.json"
+    },
+    {
+      "record_index": 12,
+      "pointer_table_cpu": "$8040",
+      "source_pointer_cpu": "$AEB4",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$B077",
+      "payload_bytes": 444,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_aeb4_ppu_0800.bin",
+        "rom_prg22_src_aeb4_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_aeb4_ppu_0800.json"
+    },
+    {
+      "record_index": 13,
+      "pointer_table_cpu": "$8042",
+      "source_pointer_cpu": "$B298",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$B4FE",
+      "payload_bytes": 607,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg22_src_b298_ppu_0800.bin",
+        "rom_prg22_src_b298_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_b298_ppu_0800.json"
+    },
+    {
+      "record_index": 14,
+      "pointer_table_cpu": "$8044",
+      "source_pointer_cpu": "$B60C",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$B8CC",
+      "payload_bytes": 696,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg22_src_b60c_ppu_0800.bin",
+        "rom_prg22_src_b60c_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_b60c_ppu_0800.json"
+    },
+    {
+      "record_index": 15,
+      "pointer_table_cpu": "$8046",
+      "source_pointer_cpu": "$BA20",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$BD99",
+      "payload_bytes": 881,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg22_src_ba20_ppu_0800.bin",
+        "rom_prg22_src_ba20_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_ba20_ppu_0800.json"
+    },
+    {
+      "record_index": 16,
+      "pointer_table_cpu": "$8048",
+      "source_pointer_cpu": "$BE94",
+      "starting_prg_bank": 22,
+      "source_end_cpu_exclusive": "$C3CB",
+      "payload_bytes": 1326,
+      "ppu_start_address": "$0800",
+      "stream_count": 6,
+      "files": [
+        "rom_prg22_src_be94_ppu_0800.bin",
+        "rom_prg22_src_be94_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg22_src_be94_ppu_0800.json"
+    },
+    {
+      "record_index": 17,
+      "pointer_table_cpu": "$804A",
+      "source_pointer_cpu": "$C418",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$C79E",
+      "payload_bytes": 894,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg23_src_c418_ppu_0800.bin",
+        "rom_prg23_src_c418_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_c418_ppu_0800.json"
+    },
+    {
+      "record_index": 18,
+      "pointer_table_cpu": "$804C",
+      "source_pointer_cpu": "$C89C",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$CAD8",
+      "payload_bytes": 565,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg23_src_c89c_ppu_0800.bin",
+        "rom_prg23_src_c89c_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_c89c_ppu_0800.json"
+    },
+    {
+      "record_index": 19,
+      "pointer_table_cpu": "$804E",
+      "source_pointer_cpu": "$CC40",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$CE55",
+      "payload_bytes": 526,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg23_src_cc40_ppu_0800.bin",
+        "rom_prg23_src_cc40_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_cc40_ppu_0800.json"
+    },
+    {
+      "record_index": 20,
+      "pointer_table_cpu": "$8050",
+      "source_pointer_cpu": "$D378",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$D674",
+      "payload_bytes": 756,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg23_src_d378_ppu_0800.bin",
+        "rom_prg23_src_d378_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_d378_ppu_0800.json"
+    },
+    {
+      "record_index": 21,
+      "pointer_table_cpu": "$8052",
+      "source_pointer_cpu": "$CF74",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$D37B",
+      "payload_bytes": 1024,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg23_src_cf74_ppu_0800.bin",
+        "rom_prg23_src_cf74_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_cf74_ppu_0800.json"
+    },
+    {
+      "record_index": 22,
+      "pointer_table_cpu": "$8054",
+      "source_pointer_cpu": "$D7EC",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$DACD",
+      "payload_bytes": 730,
+      "ppu_start_address": "$0800",
+      "stream_count": 4,
+      "files": [
+        "rom_prg23_src_d7ec_ppu_0800.bin",
+        "rom_prg23_src_d7ec_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_d7ec_ppu_0800.json"
+    },
+    {
+      "record_index": 23,
+      "pointer_table_cpu": "$8056",
+      "source_pointer_cpu": "$DB50",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$DE74",
+      "payload_bytes": 796,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg23_src_db50_ppu_0800.bin",
+        "rom_prg23_src_db50_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_db50_ppu_0800.json"
+    },
+    {
+      "record_index": 24,
+      "pointer_table_cpu": "$8058",
+      "source_pointer_cpu": "$DF64",
+      "starting_prg_bank": 23,
+      "source_end_cpu_exclusive": "$E318",
+      "payload_bytes": 940,
+      "ppu_start_address": "$0800",
+      "stream_count": 5,
+      "files": [
+        "rom_prg23_src_df64_ppu_0800.bin",
+        "rom_prg23_src_df64_ppu_0800_tiles.png"
+      ],
+      "metadata_file": "rom_prg23_src_df64_ppu_0800.json"
+    }
+  ],
+  "limitations": [
+    "The Mapper 15 hack's exact upper-window mapping still needs emulator debugger confirmation.",
+    "All streams target PPU $0800; this is not a direct mapping to the low OAM tile IDs."
+  ]
+}

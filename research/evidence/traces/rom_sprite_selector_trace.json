@@ -1,0 +1,197 @@
+{
+  "reference_rom": "BaoXiaoSanGuo(ES1005)(ChS)(970261).nes",
+  "selector_array": {
+    "address": "$6467",
+    "interpretation": "record ID indexed by a selector byte; semantic meaning of each ID remains unknown"
+  },
+  "oam_template_lookup": {
+    "selector_address": "$6408",
+    "entry_point": {
+      "prg_bank": 18,
+      "cpu_address": "$802E",
+      "opcode_bytes": "AE 08 64 BD 67 64 0A A8"
+    },
+    "pointer_table": {
+      "prg_bank": 18,
+      "cpu_address": "$8543",
+      "entry_count": 25
+    },
+    "template_worker": {
+      "prg_bank": 19,
+      "cpu_address": "$F072"
+    }
+  },
+  "indexed_ppu_stream_lookup": {
+    "selector_address": "$6409",
+    "entry_point": {
+      "prg_bank": 22,
+      "cpu_address": "$8003",
+      "opcode_bytes": "AC 09 64 B9 67 64 0A A8"
+    },
+    "pointer_table": {
+      "prg_bank": 22,
+      "cpu_address": "$8028",
+      "entry_count": 25
+    },
+    "ppu_stream_writer": {
+      "prg_bank": 22,
+      "cpu_address": "$805A",
+      "destination_address": "$0800"
+    },
+    "primary_pointer_count": 25,
+    "selector_26_overread": {
+      "pointer_read_cpu": "$805C",
+      "pointer_value_cpu": "$9848",
+      "decoded_header": {
+        "ppu_start_address": "$0000",
+        "segment_count": 128
+      },
+      "status": "does not match the 25 canonical $0800 streams; whether the bank-22 NMI callback is invoked for this selector remains unresolved"
+    },
+    "selector_26_alternate_upload": {
+      "prg_bank": 12,
+      "slot_selector_address": "$6408",
+      "graphic_id_array": "$6467",
+      "table_cpu": "$8050",
+      "source_pointer_cpu": "$EDAD",
+      "source_prg_bank": 13,
+      "ppu_start_address": "$3C9C",
+      "segment_count": 28,
+      "payload_bytes": 3802,
+      "ppu_wrap_offset": 868,
+      "post_wrap_chr_bytes": 2934,
+      "matching_oam_layout": {
+        "selector_index": 26,
+        "template_cpu": "$BA0F",
+        "entry_count": 56,
+        "unique_tile_ids": 28,
+        "all_tile_ids_covered_after_wrap": true
+      },
+      "interpretation": "Strong static pairing from the shared $6467 selector; exact runtime callback timing and residency have not been captured"
+    },
+    "nmi_gate": {
+      "prg_bank": 60,
+      "cpu_address": "$E8E0",
+      "ram_address": "$6805",
+      "condition": "callback requested when zero; nonzero skips the callback",
+      "requested_callback_bank": 22,
+      "callback_index": 0
+    }
+  },
+  "selector_6409_write_examples": [
+    {
+      "prg_bank": 2,
+      "cpu_address": "$8D92",
+      "operation": "copy $60C8 into $6409"
+    },
+    {
+      "prg_bank": 2,
+      "cpu_address": "$9354",
+      "operation": "copy $6408 into $6409 when $670F is zero"
+    },
+    {
+      "prg_bank": 2,
+      "cpu_address": "$94E9",
+      "operation": "write $FF to $6409 on one branch"
+    },
+    {
+      "prg_bank": 2,
+      "cpu_address": "$9A30",
+      "operation": "copy $60C8 into $6409 on one $60D0 state"
+    },
+    {
+      "prg_bank": 2,
+      "cpu_address": "$9A6F",
+      "operation": "select a $60C8,X list entry into $6409 in the list-selection loop"
+    },
+    {
+      "prg_bank": 2,
+      "cpu_address": "$AA4D",
+      "operation": "initialize $6409 to $FF before rebuilding a unit-slot list"
+    }
+  ],
+  "slot_list_selection_path": {
+    "list_builder": {
+      "prg_bank": 2,
+      "cpu_address": "$AA48",
+      "observed_operations": [
+        "read $6408 into Y as the comparison slot",
+        "initialize $6409 to $FF and $60D0 to zero",
+        "scan the paired $64B7/$648F fields and accept entries one step away on one field while matching the other field",
+        "append qualifying slot indices to $60C8 starting at $60C8[0]"
+      ],
+      "calls_selector": {
+        "prg_bank": 2,
+        "cpu_address": "$AAB8",
+        "target_cpu_address": "$9A24"
+      }
+    },
+    "list_selector": {
+      "prg_bank": 2,
+      "cpu_address": "$9A24",
+      "observed_operations": [
+        "return when $60D0 is zero",
+        "copy $60C8[0] into $6409 when $60D0 is one",
+        "when multiple entries exist, compare $65A8:$65A7 as a little-endian 16-bit value and select the entry with the smallest value"
+      ],
+      "interpretation": "$6409 is selected from slots adjacent to the $6408 slot in the paired $64B7/$648F fields; treating those fields as grid coordinates is a strong but unverified interpretation"
+    }
+  },
+  "slot_position_evidence": {
+    "record_fields": {
+      "$648F": "first of two consecutive bytes loaded through ($1E),Y in bank 8 at $806B",
+      "$64B7": "second of two consecutive bytes loaded through ($1E),Y in bank 8 at $8070"
+    },
+    "record_pointer_table": {
+      "prg_bank": 8,
+      "cpu_address": "$8B1E",
+      "loaded_by": "$8149"
+    },
+    "relative_position_loader": {
+      "prg_bank": 8,
+      "cpu_address": "$81E8",
+      "record_pointer_base": "$8B7C",
+      "record_stride_bytes": 13,
+      "record_index_address": "$05E8",
+      "stride_helper": "$9BCA",
+      "operations": [
+        "copy two record bytes into $6557/$6558",
+        "subtract $05F1/$05F2 respectively and store into $65A7/$65A8"
+      ],
+      "interpretation": "$6557/$6558 are record-derived bounds or base values; $65A7/$65A8 hold their mutable offset-relative position pair"
+    },
+    "record_group_lookup": {
+      "prg_bank": 8,
+      "entry_point": "$8149",
+      "id_address": "$05E8",
+      "id_list_pointer_table": "$8B1E",
+      "group_count": 7,
+      "result_address": "$05E7",
+      "interpretation": "checks which counted ID list contains the record index; the game meanings of the groups are unknown"
+    },
+    "position_calculation": {
+      "prg_bank": 2,
+      "cpu_address": "$886C",
+      "operations": [
+        "load $64B7,X, shift left three times, store at $0616",
+        "load $648F,X, subtract $6802, shift left four times, store at $0618",
+        "bank 2 $88A0-$88D8 adds $0616/$0618 to $65A7/$65A8 pairs and checks the result against $6557/$6558"
+      ],
+      "interpretation": "per-slot character or unit positions are strongly indicated by the loader, bounded updates, adjacency search, and shared selector slots; axis orientation and units remain unknown, and the distinct scaling factors do not establish equivalent tile coordinates"
+    },
+    "baseline_state": {
+      "address": "$6802",
+      "evidence": [
+        "bank 2 $8102 initializes it to zero",
+        "bank 2 $81A5 compares it with $6801",
+        "bank 2 $8200 increments it and $827A decrements it during the movement loop"
+      ],
+      "interpretation": "mutable position or offset state is indicated; camera origin, cursor position, and animation-counter roles remain unresolved"
+    }
+  },
+  "conclusion": "OAM and indexed PPU data both resolve through $6467, but they use independent selectors $6408 and $6409. Static code sometimes synchronizes them and sometimes assigns $6409 separately or uses $FF. Runtime record-to-stream pairing is not yet confirmed.",
+  "limitations": [
+    "Static ROM evidence only; selector values and mapper mapping have not been captured during a battle frame.",
+    "The meanings of $60C8, $6408, $6409, and the records in $6467 are not fully decoded."
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "source": "用户提供的中文转职流程资料；与 ROM 转职数据的核对结果见技术文档",
+  "status": "transcribed_from_manual_not_yet_checked_in_emulator",
+  "experience_note": "Values in parentheses are the thresholds shown by the manual.",
+  "branches": [
+    {
+      "starting_class": "战士",
+      "paths": [
+        [
+          { "class": "骑兵L1", "experience": 100 },
+          { "class": "骑兵L2", "experience": 180 },
+          { "class": "骠骑大将L1", "experience": 300 },
+          { "class": "骠骑大将L2", "experience": 500 },
+          { "class": "骠骑大将L3", "experience": 750 },
+          { "class": "魔兽将军L1", "experience": 1000 },
+          { "class": "魔兽将军L2", "experience": 1400 },
+          { "class": "魔兽将军L3", "experience": 1650 },
+          { "class": "魔兽将军L4", "experience": 2300 }
+        ],
+        [
+          { "class": "骑兵L1", "experience": 100 },
+          { "class": "骑兵L2", "experience": 180 },
+          { "class": "骠骑大将L1", "experience": 300 },
+          { "class": "骠骑大将L2", "experience": 500 },
+          { "class": "骠骑大将L3", "experience": 750 },
+          { "class": "车骑将军L1", "experience": 1000 },
+          { "class": "车骑将军L2", "experience": 1400 },
+          { "class": "车骑将军L3", "experience": 1700 }
+        ],
+        [
+          { "class": "骑兵L1", "experience": 100 },
+          { "class": "骑兵L2", "experience": 180 },
+          { "class": "飞马大将L1", "experience": 300 },
+          { "class": "飞马大将L2", "experience": 500 },
+          { "class": "飞马大将L3", "experience": 800 },
+          { "class": "神龙将军L1", "experience": 950 },
+          { "class": "神龙将军L2", "experience": 1300 },
+          { "class": "神龙将军L3", "experience": 1700 },
+          { "class": "神龙将军L4", "experience": 2300 }
+        ],
+        [
+          { "class": "骑兵L1", "experience": 100 },
+          { "class": "骑兵L2", "experience": 180 },
+          { "class": "飞马大将L1", "experience": 300 },
+          { "class": "飞马大将L2", "experience": 500 },
+          { "class": "飞马大将L3", "experience": 800 },
+          { "class": "魔龙将军L1", "experience": 950 },
+          { "class": "魔龙将军L2", "experience": 1300 },
+          { "class": "魔龙将军L3", "experience": 1700 },
+          { "class": "魔龙将军L4", "experience": 2300 }
+        ],
+        [
+          { "class": "勇士L1", "experience": 100 },
+          { "class": "勇士L2", "experience": 180 },
+          { "class": "铁铠大将L1", "experience": 300 },
+          { "class": "铁铠大将L2", "experience": 480 },
+          { "class": "铁铠大将L3", "experience": 720 },
+          { "class": "金甲将军L1", "experience": 1000 },
+          { "class": "金甲将军L2", "experience": 1350 },
+          { "class": "金甲将军L3", "experience": 2000 }
+        ],
+        [
+          { "class": "勇士L1", "experience": 100 },
+          { "class": "勇士L2", "experience": 180 },
+          { "class": "铁铠大将L1", "experience": 300 },
+          { "class": "铁铠大将L2", "experience": 480 },
+          { "class": "铁铠大将L3", "experience": 720 },
+          { "class": "虎威将军L1", "experience": 1000 },
+          { "class": "虎威将军L2", "experience": 1300 },
+          { "class": "虎威将军L3", "experience": 2180 }
+        ],
+        [
+          { "class": "勇士L1", "experience": 100 },
+          { "class": "勇士L2", "experience": 180 },
+          { "class": "巨剑将军L1", "experience": 300 },
+          { "class": "巨剑将军L2", "experience": 480 },
+          { "class": "巨剑将军L3", "experience": 720 },
+          { "class": "神剑将军L1", "experience": 1000 },
+          { "class": "神剑将军L2", "experience": 1400 },
+          { "class": "神剑将军L3", "experience": 2180 }
+        ],
+        [
+          { "class": "勇士L1", "experience": 100 },
+          { "class": "勇士L2", "experience": 180 },
+          { "class": "巨剑将军L1", "experience": 300 },
+          { "class": "巨剑将军L2", "experience": 480 },
+          { "class": "巨剑将军L3", "experience": 720 },
+          { "class": "巨斧将军L1", "experience": 1000 },
+          { "class": "巨斧将军L2", "experience": 1400 },
+          { "class": "巨斧将军L3", "experience": 2180 }
+        ],
+        [
+          { "class": "弓兵L1", "experience": 100 },
+          { "class": "弓兵L2", "experience": 220 },
+          { "class": "神箭手L1", "experience": 400 },
+          { "class": "神箭手L2", "experience": 880 },
+          { "class": "神箭手L3", "experience": 2000 }
+        ],
+        [
+          { "class": "弓兵L1", "experience": 100 },
+          { "class": "弓兵L2", "experience": 220 },
+          { "class": "弩手L1", "experience": 400 },
+          { "class": "弩手L2", "experience": 600 },
+          { "class": "弩手L3", "experience": 850 },
+          { "class": "巨炮将军L1", "experience": 1100 },
+          { "class": "巨炮将军L2", "experience": 1400 },
+          { "class": "巨炮将军L3", "experience": 2000 }
+        ]
+      ]
+    },
+    {
+      "starting_class": "文官",
+      "paths": [
+        [
+          { "class": "军师L1", "experience": 100 },
+          { "class": "军师L2", "experience": 260 },
+          { "class": "神机军师L1", "experience": 520 },
+          { "class": "神机军师L2", "experience": 850 },
+          { "class": "神机军师L3", "experience": 1200 },
+          { "class": "究极军师L1", "experience": 1400 },
+          { "class": "究极军师L2", "experience": 1700 },
+          { "class": "究极军师L3", "experience": 2000 }
+        ],
+        [
+          { "class": "谋士L1", "experience": 100 },
+          { "class": "谋士L2", "experience": 280 },
+          { "class": "神算谋士L1", "experience": 520 },
+          { "class": "神算谋士L2", "experience": 800 },
+          { "class": "神算谋士L3", "experience": 1100 },
+          { "class": "究极军师L1", "experience": 1400 },
+          { "class": "究极军师L2", "experience": 1700 },
+          { "class": "究极军师L3", "experience": 2000 }
+        ]
+      ]
+    }
+  ]
+}

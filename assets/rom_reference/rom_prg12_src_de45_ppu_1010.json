@@ -1,0 +1,78 @@
+{
+  "source_prg_bank": 12,
+  "source_pointer_cpu": "$DE45",
+  "source_end_cpu_exclusive": "$E349",
+  "source_prg_bank_by_cpu_window": {
+    "$8000-$BFFF": 12,
+    "$C000-$FFFF": 13
+  },
+  "ppu_start_address": "$1010",
+  "segment_count": 5,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 1280,
+  "payload_end_address_exclusive": "$1510",
+  "ppu_address_space_bytes": 16384,
+  "ppu_memory_regions_after_14bit_wrap": [
+    {
+      "ppu_start_address": "$1010",
+      "payload_offset": 0,
+      "byte_count": 1280
+    }
+  ],
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 80,
+  "preview_size": [
+    512,
+    160
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$DE49"
+    },
+    {
+      "index": 1,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$DF49"
+    },
+    {
+      "index": 2,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$E049"
+    },
+    {
+      "index": 3,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$E149"
+    },
+    {
+      "index": 4,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$E249"
+    }
+  ],
+  "chr_region_previews": [
+    {
+      "ppu_start_address": "$1010",
+      "payload_offset": 0,
+      "byte_count": 1280,
+      "image_file": "rom_prg12_src_de45_ppu_1010_ppu_1010_tiles.png",
+      "tile_count_including_partial": 80,
+      "preview_size": [
+        512,
+        160
+      ]
+    }
+  ],
+  "outputs": [
+    "rom_prg12_src_de45_ppu_1010.bin",
+    "rom_prg12_src_de45_ppu_1010_tiles.png",
+    "rom_prg12_src_de45_ppu_1010_ppu_1010_tiles.png"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source_prg_bank": 11,
+  "source_pointer_cpu": "$CEB0",
+  "source_end_cpu_exclusive": "$CFB4",
+  "source_prg_bank_by_cpu_window": {
+    "$8000-$BFFF": 10,
+    "$C000-$FFFF": 11
+  },
+  "ppu_start_address": "$1A00",
+  "segment_count": 1,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 256,
+  "payload_end_address_exclusive": "$1B00",
+  "ppu_address_space_bytes": 16384,
+  "ppu_memory_regions_after_14bit_wrap": [
+    {
+      "ppu_start_address": "$1A00",
+      "payload_offset": 0,
+      "byte_count": 256
+    }
+  ],
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 16,
+  "preview_size": [
+    512,
+    32
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$CEB4"
+    }
+  ],
+  "chr_region_previews": [
+    {
+      "ppu_start_address": "$1A00",
+      "payload_offset": 0,
+      "byte_count": 256,
+      "image_file": "rom_prg11_src_ceb0_ppu_1a00_ppu_1a00_tiles.png",
+      "tile_count_including_partial": 16,
+      "preview_size": [
+        512,
+        32
+      ]
+    }
+  ],
+  "outputs": [
+    "rom_prg11_src_ceb0_ppu_1a00.bin",
+    "rom_prg11_src_ceb0_ppu_1a00_tiles.png",
+    "rom_prg11_src_ceb0_ppu_1a00_ppu_1a00_tiles.png"
+  ]
+}

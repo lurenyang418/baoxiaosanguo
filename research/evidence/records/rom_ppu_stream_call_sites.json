@@ -1,0 +1,59 @@
+{
+  "target": "$941C",
+  "scan": "All PRG banks, byte scan for opcode bytes 20 1C 94; source pointer is labeled only when immediately set by LDA #low / STA $18 / LDA #high / STA $19.",
+  "static_call_count": 8,
+  "sites": [
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$8061",
+      "source_pointer_cpu": "$99A6",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$86C1",
+      "source_pointer_cpu": "$C64A",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$86CC",
+      "source_pointer_cpu": "$CA2E",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$86D7",
+      "source_pointer_cpu": "$CEB0",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$86E2",
+      "source_pointer_cpu": "$CF64",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$8E35",
+      "source_pointer_cpu": "$F4C8",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$9072",
+      "source_pointer_cpu": "$99A6",
+      "source_pointer_inferred_from_immediate_setup": true
+    },
+    {
+      "callsite_prg_bank": 10,
+      "callsite_cpu": "$907D",
+      "source_pointer_cpu": "$9DBA",
+      "source_pointer_inferred_from_immediate_setup": true
+    }
+  ],
+  "limitations": [
+    "Byte-pattern scanning can report data that happens to resemble a JSR instruction.",
+    "Indirect calls and other PPU transfer helpers are outside this inventory."
+  ]
+}

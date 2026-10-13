@@ -1,0 +1,55 @@
+{
+  "selector_index": 26,
+  "oam_template_cpu": "$BA0F",
+  "chr_source_pointer_cpu": "$EDAD",
+  "chr_ppu_start_address": "$0000 after 14-bit PPU wrap",
+  "raw_oam_entries": 56,
+  "unique_tile_ids": [
+    0,
+    5,
+    6,
+    7,
+    8,
+    13,
+    14,
+    15,
+    16,
+    21,
+    22,
+    23,
+    24,
+    29,
+    30,
+    31,
+    32,
+    34,
+    35,
+    37,
+    38,
+    39,
+    40,
+    41,
+    44,
+    45,
+    46,
+    65
+  ],
+  "tile_count": 28,
+  "tile_bounds": [
+    24,
+    0,
+    73,
+    64
+  ],
+  "composed_size": [
+    49,
+    64
+  ],
+  "display_scale": 4,
+  "render_mode": "grayscale; color 0 transparent; OAM flip bits applied",
+  "limitations": [
+    "Palette colors are not reconstructed in this preview.",
+    "Sprite priority and runtime position offsets are not represented.",
+    "The ROM proves static table pairing, but emulator residency is not captured."
+  ]
+}

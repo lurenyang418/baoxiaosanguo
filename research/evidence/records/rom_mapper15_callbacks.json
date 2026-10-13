@@ -1,0 +1,73 @@
+{
+  "dispatch_table_prg_bank": 19,
+  "dispatch_table_cpu": "$FFAF",
+  "callback_window_prg_bank": 10,
+  "entry_count": 9,
+  "entries": [
+    {
+      "index": 0,
+      "target_cpu": "$8000",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 0f 80 4c 8b 86 4c 17 8e 4c 50 90 4c f7 93 8a"
+    },
+    {
+      "index": 1,
+      "target_cpu": "$8003",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 8b 86 4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48"
+    },
+    {
+      "index": 2,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    },
+    {
+      "index": 3,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    },
+    {
+      "index": 4,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    },
+    {
+      "index": 5,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    },
+    {
+      "index": 6,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    },
+    {
+      "index": 7,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    },
+    {
+      "index": 8,
+      "target_cpu": "$8006",
+      "candidate_callback_prg_bank": 10,
+      "target_bytes_hex": "4c 17 8e 4c 50 90 4c f7 93 8a 48 98 48 a9 ff 8d"
+    }
+  ],
+  "observed_ending_callback": {
+    "requested_bank_value": 21,
+    "mapped_physical_prg_bank": 42,
+    "entry_cpu": "$8006",
+    "entry_bytes_hex": "4c 06 80",
+    "evidence": "Controlled FCEUX final-branch trace at frame 4012; $6400=19 and mapped $8000 bytes 4C 06 80"
+  },
+  "notes": [
+    "The shared $FF50 wrapper saves the current bank value from $60DD, selects the bank in $60DC, dispatches through $FF71 using the index in $60DE, then restores the saved bank.",
+    "The table contains CPU targets in the $8000-$BFFF window. Bank 10 is an earlier static candidate only; it is not a universal callback bank. The ending request value $15 maps physical PRG bank 42 in the controlled FCEUX trace. Other request values still require separate runtime mapping checks."
+  ]
+}

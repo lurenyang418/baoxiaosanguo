@@ -1,0 +1,17 @@
+frame=3316
+stage=$00
+battle_player_count=$03
+group1_count=$00
+group2_count=$08
+roster_count=$03
+horizontal_state_6801_6802=$0F,$0A
+movement_check_mode_05cc=$00
+movement_budget_05e6=$FF
+input_code_05cf=$00
+selected_unit_slot_6408=$00
+ram_060a_060b=$00,$00
+coordinate_bytes_0616_0617_0618_0619=$70,$70,$D0,$D0
+coordinate_write_events=
+roster_indices=00,00,00
+roster_type_ids=00,00,00
+unit_positions(slot:y,x)=00:17,07 01:18,08 02:19,07 03:04,08 04:0F,07 05:0F,08 06:09,07 07:09,08 08:06,07 09:06,08 0A:06,09

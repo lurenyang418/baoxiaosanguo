@@ -1,0 +1,1104 @@
+{
+  "source_rom": "BaoXiaoSanGuo(ES1005)(ChS)(970261).nes",
+  "stage_count": 19,
+  "callback_selection": {
+    "caller_cpu": "$8046",
+    "callback_bank": 4,
+    "callback_index": 0,
+    "stage_index_source": "$6400",
+    "stream_pointer_table_cpu": "$804B",
+    "stream_format": "PPU address high/low, block count, first block length (zero means 256), contiguous payload; remaining blocks are 256 bytes each",
+    "shared_stream_load_order": [
+      "$8322",
+      "$8506",
+      "$80DE"
+    ]
+  },
+  "shared_streams": [
+    {
+      "load_order": 0,
+      "source_pointer_cpu": "$8322",
+      "source_end_cpu_exclusive": "$8526",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8326"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8426"
+        }
+      ],
+      "ppu_start_address": "$1700",
+      "payload_bytes": 512,
+      "payload_end_address_exclusive": "$1900",
+      "tile_count_including_partial": 32,
+      "preview_size": [
+        512,
+        64
+      ],
+      "raw_file": "rom_battle_shared_chr_00_ppu_1700.bin",
+      "preview_file": "rom_battle_shared_chr_00_ppu_1700_tiles.png"
+    },
+    {
+      "load_order": 1,
+      "source_pointer_cpu": "$8506",
+      "source_end_cpu_exclusive": "$860A",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$850A"
+        }
+      ],
+      "ppu_start_address": "$1910",
+      "payload_bytes": 256,
+      "payload_end_address_exclusive": "$1A10",
+      "tile_count_including_partial": 16,
+      "preview_size": [
+        512,
+        32
+      ],
+      "raw_file": "rom_battle_shared_chr_01_ppu_1910.bin",
+      "preview_file": "rom_battle_shared_chr_01_ppu_1910_tiles.png"
+    },
+    {
+      "load_order": 2,
+      "source_pointer_cpu": "$80DE",
+      "source_end_cpu_exclusive": "$83E2",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$80E2"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$81E2"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$82E2"
+        }
+      ],
+      "ppu_start_address": "$0010",
+      "payload_bytes": 768,
+      "payload_end_address_exclusive": "$0310",
+      "tile_count_including_partial": 48,
+      "preview_size": [
+        512,
+        96
+      ],
+      "raw_file": "rom_battle_shared_chr_02_ppu_0010.bin",
+      "preview_file": "rom_battle_shared_chr_02_ppu_0010_tiles.png"
+    }
+  ],
+  "records": [
+    {
+      "stage_index": 0,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$859A",
+      "source_end_cpu_exclusive": "$889E",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 768,
+      "payload_end_address_exclusive": "$1310",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$859E"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$869E"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$879E"
+        }
+      ],
+      "tile_count_including_partial": 48,
+      "preview_size": [
+        512,
+        96
+      ],
+      "raw_file": "rom_battle_stage_00_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_00_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 1,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$940A",
+      "source_end_cpu_exclusive": "$980E",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1024,
+      "payload_end_address_exclusive": "$1410",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$940E"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$950E"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$960E"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$970E"
+        }
+      ],
+      "tile_count_including_partial": 64,
+      "preview_size": [
+        512,
+        128
+      ],
+      "raw_file": "rom_battle_stage_01_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_01_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 2,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$881E",
+      "source_end_cpu_exclusive": "$8C22",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1024,
+      "payload_end_address_exclusive": "$1410",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8822"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8922"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8A22"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8B22"
+        }
+      ],
+      "tile_count_including_partial": 64,
+      "preview_size": [
+        512,
+        128
+      ],
+      "raw_file": "rom_battle_stage_02_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_02_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 3,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$8B52",
+      "source_end_cpu_exclusive": "$9156",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1536,
+      "payload_end_address_exclusive": "$1610",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8B56"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8C56"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8D56"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8E56"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$8F56"
+        },
+        {
+          "index": 5,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9056"
+        }
+      ],
+      "tile_count_including_partial": 96,
+      "preview_size": [
+        512,
+        192
+      ],
+      "raw_file": "rom_battle_stage_03_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_03_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 4,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$9066",
+      "source_end_cpu_exclusive": "$946A",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1024,
+      "payload_end_address_exclusive": "$1410",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$906A"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$916A"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$926A"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$936A"
+        }
+      ],
+      "tile_count_including_partial": 64,
+      "preview_size": [
+        512,
+        128
+      ],
+      "raw_file": "rom_battle_stage_04_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_04_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 5,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$9066",
+      "source_end_cpu_exclusive": "$946A",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1024,
+      "payload_end_address_exclusive": "$1410",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$906A"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$916A"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$926A"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$936A"
+        }
+      ],
+      "tile_count_including_partial": 64,
+      "preview_size": [
+        512,
+        128
+      ],
+      "raw_file": "rom_battle_stage_05_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_05_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 6,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$972E",
+      "source_end_cpu_exclusive": "$9A32",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 768,
+      "payload_end_address_exclusive": "$1310",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9732"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9832"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9932"
+        }
+      ],
+      "tile_count_including_partial": 48,
+      "preview_size": [
+        512,
+        96
+      ],
+      "raw_file": "rom_battle_stage_06_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_06_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 7,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$9982",
+      "source_end_cpu_exclusive": "$9D86",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1024,
+      "payload_end_address_exclusive": "$1410",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9986"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9A86"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9B86"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9C86"
+        }
+      ],
+      "tile_count_including_partial": 64,
+      "preview_size": [
+        512,
+        128
+      ],
+      "raw_file": "rom_battle_stage_07_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_07_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 8,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$C84A",
+      "source_end_cpu_exclusive": "$CD4E",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "payload_end_address_exclusive": "$1510",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C84E"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C94E"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$CA4E"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$CB4E"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$CC4E"
+        }
+      ],
+      "tile_count_including_partial": 80,
+      "preview_size": [
+        512,
+        160
+      ],
+      "raw_file": "rom_battle_stage_08_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_08_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 9,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$CD2E",
+      "source_end_cpu_exclusive": "$D332",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1536,
+      "payload_end_address_exclusive": "$1610",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$CD32"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$CE32"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$CF32"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$D032"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$D132"
+        },
+        {
+          "index": 5,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$D232"
+        }
+      ],
+      "tile_count_including_partial": 96,
+      "preview_size": [
+        512,
+        192
+      ],
+      "raw_file": "rom_battle_stage_09_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_09_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 10,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$9D66",
+      "source_end_cpu_exclusive": "$A26A",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "payload_end_address_exclusive": "$1510",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9D6A"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9E6A"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$9F6A"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A06A"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A16A"
+        }
+      ],
+      "tile_count_including_partial": 80,
+      "preview_size": [
+        512,
+        160
+      ],
+      "raw_file": "rom_battle_stage_10_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_10_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 11,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$C266",
+      "source_end_cpu_exclusive": "$C86A",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1536,
+      "payload_end_address_exclusive": "$1610",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C26A"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C36A"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C46A"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C56A"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C66A"
+        },
+        {
+          "index": 5,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C76A"
+        }
+      ],
+      "tile_count_including_partial": 96,
+      "preview_size": [
+        512,
+        192
+      ],
+      "raw_file": "rom_battle_stage_11_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_11_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 12,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$A24A",
+      "source_end_cpu_exclusive": "$A74E",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "payload_end_address_exclusive": "$1510",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A24E"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A34E"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A44E"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A54E"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A64E"
+        }
+      ],
+      "tile_count_including_partial": 80,
+      "preview_size": [
+        512,
+        160
+      ],
+      "raw_file": "rom_battle_stage_12_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_12_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 13,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$A67E",
+      "source_end_cpu_exclusive": "$AC82",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1536,
+      "payload_end_address_exclusive": "$1610",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A682"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A782"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A882"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$A982"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$AA82"
+        },
+        {
+          "index": 5,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$AB82"
+        }
+      ],
+      "tile_count_including_partial": 96,
+      "preview_size": [
+        512,
+        192
+      ],
+      "raw_file": "rom_battle_stage_13_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_13_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 14,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$ABC2",
+      "source_end_cpu_exclusive": "$B1C6",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1536,
+      "payload_end_address_exclusive": "$1610",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$ABC6"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$ACC6"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$ADC6"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$AEC6"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$AFC6"
+        },
+        {
+          "index": 5,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B0C6"
+        }
+      ],
+      "tile_count_including_partial": 96,
+      "preview_size": [
+        512,
+        192
+      ],
+      "raw_file": "rom_battle_stage_14_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_14_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 15,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$B0D6",
+      "source_end_cpu_exclusive": "$B5DA",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "payload_end_address_exclusive": "$1510",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B0DA"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B1DA"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B2DA"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B3DA"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B4DA"
+        }
+      ],
+      "tile_count_including_partial": 80,
+      "preview_size": [
+        512,
+        160
+      ],
+      "raw_file": "rom_battle_stage_15_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_15_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 16,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$B5BA",
+      "source_end_cpu_exclusive": "$B8BE",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 768,
+      "payload_end_address_exclusive": "$1310",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B5BE"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B6BE"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B7BE"
+        }
+      ],
+      "tile_count_including_partial": 48,
+      "preview_size": [
+        512,
+        96
+      ],
+      "raw_file": "rom_battle_stage_16_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_16_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 17,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$B86E",
+      "source_end_cpu_exclusive": "$BE72",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1536,
+      "payload_end_address_exclusive": "$1610",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B872"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$B972"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BA72"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BB72"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BC72"
+        },
+        {
+          "index": 5,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BD72"
+        }
+      ],
+      "tile_count_including_partial": 96,
+      "preview_size": [
+        512,
+        192
+      ],
+      "raw_file": "rom_battle_stage_17_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_17_chr_ppu_1010_tiles.png"
+    },
+    {
+      "stage_index": 18,
+      "callback_bank": 4,
+      "callback_entry_cpu": "$8006",
+      "pointer_table_cpu": "$804B",
+      "source_pointer_cpu": "$BDA2",
+      "source_end_cpu_exclusive": "$C2A6",
+      "source_prg_banks_by_cpu_window": {
+        "$8000-$BFFF": 4,
+        "$C000-$FFFF": 5
+      },
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "payload_end_address_exclusive": "$1510",
+      "segments": [
+        {
+          "index": 0,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BDA6"
+        },
+        {
+          "index": 1,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BEA6"
+        },
+        {
+          "index": 2,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$BFA6"
+        },
+        {
+          "index": 3,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C0A6"
+        },
+        {
+          "index": 4,
+          "encoded_length": 0,
+          "decoded_length": 256,
+          "source_cpu": "$C1A6"
+        }
+      ],
+      "tile_count_including_partial": 80,
+      "preview_size": [
+        512,
+        160
+      ],
+      "raw_file": "rom_battle_stage_18_chr_ppu_1010.bin",
+      "preview_file": "rom_battle_stage_18_chr_ppu_1010_tiles.png"
+    }
+  ]
+}

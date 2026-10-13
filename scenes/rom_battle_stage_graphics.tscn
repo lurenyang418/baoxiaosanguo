@@ -1,0 +1,308 @@
+[gd_scene load_steps=25 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_00_chr_ppu_1010_tiles.png" id="stage_01"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_01_chr_ppu_1010_tiles.png" id="stage_02"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_02_chr_ppu_1010_tiles.png" id="stage_03"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_03_chr_ppu_1010_tiles.png" id="stage_04"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_04_chr_ppu_1010_tiles.png" id="stage_05"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_05_chr_ppu_1010_tiles.png" id="stage_06"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_06_chr_ppu_1010_tiles.png" id="stage_07"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_07_chr_ppu_1010_tiles.png" id="stage_08"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_08_chr_ppu_1010_tiles.png" id="stage_09"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_09_chr_ppu_1010_tiles.png" id="stage_10"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_10_chr_ppu_1010_tiles.png" id="stage_11"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_11_chr_ppu_1010_tiles.png" id="stage_12"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_12_chr_ppu_1010_tiles.png" id="stage_13"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_13_chr_ppu_1010_tiles.png" id="stage_14"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_14_chr_ppu_1010_tiles.png" id="stage_15"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_15_chr_ppu_1010_tiles.png" id="stage_16"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_16_chr_ppu_1010_tiles.png" id="stage_17"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_17_chr_ppu_1010_tiles.png" id="stage_18"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_18_chr_ppu_1010_tiles.png" id="stage_19"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_stage00_composed_stage_chr_candidate_grayscale.png" id="stage00_map"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_stage00_composed_stage_chr_candidate_color.png" id="stage00_map_color"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_shared_chr_00_ppu_1700_tiles.png" id="shared_00"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_shared_chr_01_ppu_1910_tiles.png" id="shared_01"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_shared_chr_02_ppu_0010_tiles.png" id="shared_02"]
+
+[node name="RomBattleStageGraphics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+offset_right = 256.0
+offset_bottom = 240.0
+horizontal_scroll_mode = 3
+
+[node name="Items" type="VBoxContainer" parent="Scroll"]
+custom_minimum_size = Vector2(512, 0)
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Intro" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 0 composition · CHR source candidate + stage overlay · grayscale diagnostic"
+
+[node name="Stage00Map" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage00_map")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="ColorMapLabel" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 0 · ROM palette indices rendered with FCEUX.pal"
+
+[node name="Stage00MapColor" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage00_map_color")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label00" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 00 · bank 4 $859A → PPU $1010 · 514 bytes"
+
+[node name="Tiles00" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_01")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label01" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 01 · bank 4 $940A → PPU $1010 · 386 bytes"
+
+[node name="Tiles01" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_02")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label02" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 02 · bank 4 $881E → PPU $1010 · 628 bytes"
+
+[node name="Tiles02" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_03")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label03" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 03 · bank 4 $8B52 → PPU $1010 · 765 bytes"
+
+[node name="Tiles03" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_04")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label04" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 04 · bank 4 $9066 → PPU $1010 · 680 bytes"
+
+[node name="Tiles04" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_05")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label05" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 05 · bank 4 $9066 → PPU $1010 · 680 bytes"
+
+[node name="Tiles05" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_06")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label06" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 06 · bank 4 $972E → PPU $1010 · 641 bytes"
+
+[node name="Tiles06" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_07")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label07" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 07 · bank 4 $9982 → PPU $1010 · 887 bytes"
+
+[node name="Tiles07" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_08")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label08" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 08 · bank 4 $C84A → PPU $1010 · 833 bytes"
+
+[node name="Tiles08" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_09")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label09" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 09 · bank 4 $CD2E → PPU $1010 · 1234 bytes"
+
+[node name="Tiles09" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_10")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label10" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 10 · bank 4 $9D66 → PPU $1010 · 841 bytes"
+
+[node name="Tiles10" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_11")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label11" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 11 · bank 4 $C266 → PPU $1010 · 866 bytes"
+
+[node name="Tiles11" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_12")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label12" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 12 · bank 4 $A24A → PPU $1010 · 1007 bytes"
+
+[node name="Tiles12" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_13")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label13" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 13 · bank 4 $A67E → PPU $1010 · 760 bytes"
+
+[node name="Tiles13" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_14")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label14" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 14 · bank 4 $ABC2 → PPU $1010 · 970 bytes"
+
+[node name="Tiles14" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_15")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label15" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 15 · bank 4 $B0D6 → PPU $1010 · 950 bytes"
+
+[node name="Tiles15" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_16")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label16" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 16 · bank 4 $B5BA → PPU $1010 · 363 bytes"
+
+[node name="Tiles16" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_17")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label17" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 17 · bank 4 $B86E → PPU $1010 · 505 bytes"
+
+[node name="Tiles17" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_18")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label18" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Stage 18 · bank 4 $BDA2 → PPU $1010 · 681 bytes"
+
+[node name="Tiles18" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("stage_19")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="SharedLabel00" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Shared callback stream 0 · bank 4 $8322 → PPU $1700 · 259 bytes"
+
+[node name="SharedTiles00" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("shared_00")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="SharedLabel01" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Shared callback stream 1 · bank 4 $8506 → PPU $1910 · 256 bytes"
+
+[node name="SharedTiles01" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("shared_01")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="SharedLabel02" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Shared callback stream 2 · bank 4 $80DE → PPU $0010 · 608 bytes"
+
+[node name="SharedTiles02" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 96)
+texture = ExtResource("shared_02")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1

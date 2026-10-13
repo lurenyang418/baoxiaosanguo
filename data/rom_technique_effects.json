@@ -1,0 +1,1176 @@
+{
+  "source_prg_bank": 8,
+  "pointer_table_cpu": "$9155",
+  "loader_cpu": "$903F-$906F",
+  "effect_application_cpu": "$9A69-$9B57",
+  "interpretation": "The loader indexes technique ID minus one, selects a packet variant using $05CD, and copies effect magnitude to $05EB. The damage path subtracts $05EB from target HP; techniques 19-33 with variant zero use the healing path, adding $05EB and clamping to maximum HP. IDs 1-18 and 34 cross-check the supplied technical-parameters chart. Range and area bytes for unlisted IDs are ROM values; their exact targeting semantics may vary.",
+  "player_variant_menu": {
+    "source_prg_bank": 8,
+    "setup_cpu": "$8F24-$8F78",
+    "input_cpu": "$8FAD-$903F",
+    "setup_bytes": [
+      174,
+      8,
+      100,
+      189,
+      231,
+      102,
+      201,
+      19,
+      144,
+      37,
+      201,
+      34,
+      240,
+      33,
+      169,
+      1,
+      141,
+      234,
+      5,
+      189,
+      231,
+      102,
+      201,
+      24,
+      144,
+      10,
+      238,
+      234,
+      5,
+      201,
+      30,
+      144,
+      3,
+      238,
+      234,
+      5,
+      169,
+      186,
+      133,
+      14,
+      169,
+      144,
+      133,
+      15,
+      76,
+      120,
+      143,
+      169,
+      0,
+      141,
+      234,
+      5,
+      169,
+      112,
+      133,
+      14,
+      169,
+      144,
+      133,
+      15
+    ],
+    "records": [
+      {
+        "technique_id": 1,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 2,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 3,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 4,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 5,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 6,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 7,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 8,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 9,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 10,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 11,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 12,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 13,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 14,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 15,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 16,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 17,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 18,
+        "highest_selectable_variant": 0
+      },
+      {
+        "technique_id": 19,
+        "highest_selectable_variant": 1
+      },
+      {
+        "technique_id": 20,
+        "highest_selectable_variant": 1
+      },
+      {
+        "technique_id": 21,
+        "highest_selectable_variant": 1
+      },
+      {
+        "technique_id": 22,
+        "highest_selectable_variant": 1
+      },
+      {
+        "technique_id": 23,
+        "highest_selectable_variant": 1
+      },
+      {
+        "technique_id": 24,
+        "highest_selectable_variant": 2
+      },
+      {
+        "technique_id": 25,
+        "highest_selectable_variant": 2
+      },
+      {
+        "technique_id": 26,
+        "highest_selectable_variant": 2
+      },
+      {
+        "technique_id": 27,
+        "highest_selectable_variant": 2
+      },
+      {
+        "technique_id": 28,
+        "highest_selectable_variant": 2
+      },
+      {
+        "technique_id": 29,
+        "highest_selectable_variant": 2
+      },
+      {
+        "technique_id": 30,
+        "highest_selectable_variant": 3
+      },
+      {
+        "technique_id": 31,
+        "highest_selectable_variant": 3
+      },
+      {
+        "technique_id": 32,
+        "highest_selectable_variant": 3
+      },
+      {
+        "technique_id": 33,
+        "highest_selectable_variant": 3
+      },
+      {
+        "technique_id": 34,
+        "highest_selectable_variant": 0
+      }
+    ],
+    "interpretation": "Menu starts variant zero; Down increments through $05EA, Up decrements to zero, B returns variant FF without loading an effect, A loads the chosen packet. IDs 19-23 expose two entries, 24-29 three, 30-33 four; IDs 1-18 and 34 one.",
+    "limitations": "Static control-flow evidence. Original text labels, auxiliary-byte meaning and any resource costs are not decoded. Godot lists unsupported status variants as unavailable."
+  },
+  "damage_area_selection": {
+    "source_prg_bank": 8,
+    "selector_cpu": "$96C7-$98AA",
+    "effect_cpu": "$9AC3-$9B57",
+    "areas": {
+      "1": "selected slot only",
+      "5": "selected slot plus four orthogonal neighbors",
+      "9": "selected slot plus eight neighbors"
+    },
+    "faction_filter": "Damage scans the opposing player-plus-group1 or group2 faction. Other slots on the center cell are not appended.",
+    "runtime_evidence": [
+      "rom_area5_damage_effect.tsv",
+      "rom_area9_damage_effect.tsv",
+      "rom_skill25_variant2_damage_effect.tsv"
+    ],
+    "limitations": "Controlled skill, variant and target setup verifies effect routines, not natural AI decisions, original player menu selection or costs."
+  },
+  "healing_area_selection": {
+    "source_prg_bank": 8,
+    "selector_cpu": "$96C7-$98AA",
+    "effect_cpu": "$9A69-$9AC2",
+    "areas": {
+      "1": "selected center",
+      "5": "center plus four orthogonal neighbors",
+      "9": "center plus eight neighbors"
+    },
+    "faction_filter": "Variant-zero techniques 19-33 scan the caster's player-plus-group1 or group2 faction, with selected center first.",
+    "runtime_evidence": [
+      "rom_area5_healing_effect.tsv",
+      "rom_area9_healing_effect.tsv"
+    ],
+    "limitations": "Area9 runtime record forces the area register on a type60 action; it verifies the area branch, not a natural type69 AI choice. Godot excludes defeated slots and does not implement resurrection."
+  },
+  "enemy_healing_targeting": {
+    "source_prg_bank": 2,
+    "range_table_cpu": "$ADF6",
+    "area_table_cpu": "$AE01",
+    "records": [
+      {
+        "unit_type_id": 56,
+        "maximum_range_cells": 2,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 57,
+        "maximum_range_cells": 3,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 58,
+        "maximum_range_cells": 3,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 59,
+        "maximum_range_cells": 3,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 60,
+        "maximum_range_cells": 3,
+        "area_code": 5
+      },
+      {
+        "unit_type_id": 61,
+        "maximum_range_cells": 4,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 62,
+        "maximum_range_cells": 4,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 63,
+        "maximum_range_cells": 5,
+        "area_code": 1
+      },
+      {
+        "unit_type_id": 64,
+        "maximum_range_cells": 4,
+        "area_code": 5
+      },
+      {
+        "unit_type_id": 65,
+        "maximum_range_cells": 4,
+        "area_code": 5
+      },
+      {
+        "unit_type_id": 66,
+        "maximum_range_cells": 5,
+        "area_code": 5
+      }
+    ],
+    "interpretation": "AD30 uses these targeting tables for types 56-66; effect magnitude still comes from variant zero in bank 8. Entries beyond 66 overlap code and are not claimed here. Type 59 dynamically verified: range 3, area 1, heals one target by 30."
+  },
+  "skills": [
+    {
+      "technique_id": 1,
+      "packet_cpu": "$9199",
+      "packet_bytes": [
+        20,
+        2,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 20,
+          "maximum_range_cells": 2,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 2,
+      "packet_cpu": "$919C",
+      "packet_bytes": [
+        45,
+        3,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 45,
+          "maximum_range_cells": 3,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 3,
+      "packet_cpu": "$919F",
+      "packet_bytes": [
+        40,
+        3,
+        5
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 40,
+          "maximum_range_cells": 3,
+          "area_code": 5
+        }
+      ]
+    },
+    {
+      "technique_id": 4,
+      "packet_cpu": "$91A2",
+      "packet_bytes": [
+        50,
+        4,
+        5
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 50,
+          "maximum_range_cells": 4,
+          "area_code": 5
+        }
+      ]
+    },
+    {
+      "technique_id": 5,
+      "packet_cpu": "$91A5",
+      "packet_bytes": [
+        50,
+        4,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 50,
+          "maximum_range_cells": 4,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 6,
+      "packet_cpu": "$91A8",
+      "packet_bytes": [
+        80,
+        4,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 4,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 7,
+      "packet_cpu": "$91AB",
+      "packet_bytes": [
+        95,
+        5,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 95,
+          "maximum_range_cells": 5,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 8,
+      "packet_cpu": "$91AE",
+      "packet_bytes": [
+        80,
+        5,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 5,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 9,
+      "packet_cpu": "$91B1",
+      "packet_bytes": [
+        80,
+        6,
+        5
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 6,
+          "area_code": 5
+        }
+      ]
+    },
+    {
+      "technique_id": 10,
+      "packet_cpu": "$91B4",
+      "packet_bytes": [
+        80,
+        8,
+        9
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 8,
+          "area_code": 9
+        }
+      ]
+    },
+    {
+      "technique_id": 11,
+      "packet_cpu": "$91B7",
+      "packet_bytes": [
+        50,
+        0,
+        4
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 50,
+          "maximum_range_cells": 0,
+          "area_code": 4
+        }
+      ]
+    },
+    {
+      "technique_id": 12,
+      "packet_cpu": "$91BA",
+      "packet_bytes": [
+        60,
+        0,
+        4
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 60,
+          "maximum_range_cells": 0,
+          "area_code": 4
+        }
+      ]
+    },
+    {
+      "technique_id": 13,
+      "packet_cpu": "$91BD",
+      "packet_bytes": [
+        75,
+        0,
+        4
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 75,
+          "maximum_range_cells": 0,
+          "area_code": 4
+        }
+      ]
+    },
+    {
+      "technique_id": 14,
+      "packet_cpu": "$91C0",
+      "packet_bytes": [
+        80,
+        1,
+        8
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 1,
+          "area_code": 8
+        }
+      ]
+    },
+    {
+      "technique_id": 15,
+      "packet_cpu": "$91C3",
+      "packet_bytes": [
+        60,
+        2,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 60,
+          "maximum_range_cells": 2,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 16,
+      "packet_cpu": "$91C6",
+      "packet_bytes": [
+        75,
+        3,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 75,
+          "maximum_range_cells": 3,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 17,
+      "packet_cpu": "$91C9",
+      "packet_bytes": [
+        85,
+        4,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 85,
+          "maximum_range_cells": 4,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 18,
+      "packet_cpu": "$91CC",
+      "packet_bytes": [
+        100,
+        4,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 100,
+          "maximum_range_cells": 4,
+          "area_code": 1
+        }
+      ]
+    },
+    {
+      "technique_id": 19,
+      "packet_cpu": "$91CF",
+      "packet_bytes": [
+        20,
+        2,
+        1,
+        0,
+        25,
+        2,
+        1,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 20,
+          "maximum_range_cells": 2,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 25,
+          "maximum_range_cells": 2,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 20,
+      "packet_cpu": "$91D7",
+      "packet_bytes": [
+        35,
+        3,
+        1,
+        0,
+        30,
+        3,
+        1,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 35,
+          "maximum_range_cells": 3,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 30,
+          "maximum_range_cells": 3,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 21,
+      "packet_cpu": "$91DF",
+      "packet_bytes": [
+        45,
+        3,
+        1,
+        0,
+        45,
+        3,
+        1,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 45,
+          "maximum_range_cells": 3,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 45,
+          "maximum_range_cells": 3,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 22,
+      "packet_cpu": "$91E7",
+      "packet_bytes": [
+        30,
+        2,
+        5,
+        0,
+        0,
+        3,
+        1,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 30,
+          "maximum_range_cells": 2,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 0,
+          "maximum_range_cells": 3,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 23,
+      "packet_cpu": "$91EF",
+      "packet_bytes": [
+        40,
+        3,
+        5,
+        0,
+        0,
+        4,
+        1,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 40,
+          "maximum_range_cells": 3,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 0,
+          "maximum_range_cells": 4,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 24,
+      "packet_cpu": "$91F7",
+      "packet_bytes": [
+        50,
+        4,
+        1,
+        0,
+        55,
+        4,
+        1,
+        0,
+        30,
+        4,
+        5,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 50,
+          "maximum_range_cells": 4,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 55,
+          "maximum_range_cells": 4,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 30,
+          "maximum_range_cells": 4,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 25,
+      "packet_cpu": "$9203",
+      "packet_bytes": [
+        65,
+        4,
+        1,
+        0,
+        65,
+        4,
+        1,
+        0,
+        35,
+        4,
+        5,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 65,
+          "maximum_range_cells": 4,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 65,
+          "maximum_range_cells": 4,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 35,
+          "maximum_range_cells": 4,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 26,
+      "packet_cpu": "$920F",
+      "packet_bytes": [
+        75,
+        5,
+        1,
+        0,
+        75,
+        5,
+        1,
+        0,
+        40,
+        5,
+        5,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 75,
+          "maximum_range_cells": 5,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 75,
+          "maximum_range_cells": 5,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 40,
+          "maximum_range_cells": 5,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 27,
+      "packet_cpu": "$921B",
+      "packet_bytes": [
+        40,
+        4,
+        5,
+        0,
+        0,
+        0,
+        4,
+        0,
+        20,
+        4,
+        5,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 40,
+          "maximum_range_cells": 4,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 0,
+          "maximum_range_cells": 0,
+          "area_code": 4,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 20,
+          "maximum_range_cells": 4,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 28,
+      "packet_cpu": "$9227",
+      "packet_bytes": [
+        45,
+        4,
+        5,
+        0,
+        0,
+        0,
+        4,
+        0,
+        25,
+        5,
+        5,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 45,
+          "maximum_range_cells": 4,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 0,
+          "maximum_range_cells": 0,
+          "area_code": 4,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 25,
+          "maximum_range_cells": 5,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 29,
+      "packet_cpu": "$9233",
+      "packet_bytes": [
+        50,
+        5,
+        5,
+        0,
+        0,
+        0,
+        8,
+        0,
+        30,
+        5,
+        5,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 50,
+          "maximum_range_cells": 5,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 0,
+          "maximum_range_cells": 0,
+          "area_code": 8,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 30,
+          "maximum_range_cells": 5,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 30,
+      "packet_cpu": "$923F",
+      "packet_bytes": [
+        85,
+        5,
+        1,
+        0,
+        90,
+        5,
+        1,
+        0,
+        50,
+        5,
+        5,
+        0,
+        0,
+        5,
+        9,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 85,
+          "maximum_range_cells": 5,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 90,
+          "maximum_range_cells": 5,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 50,
+          "maximum_range_cells": 5,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 0,
+          "maximum_range_cells": 5,
+          "area_code": 9,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 31,
+      "packet_cpu": "$924F",
+      "packet_bytes": [
+        100,
+        6,
+        1,
+        0,
+        100,
+        6,
+        1,
+        0,
+        70,
+        6,
+        5,
+        0,
+        80,
+        6,
+        1,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 100,
+          "maximum_range_cells": 6,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 100,
+          "maximum_range_cells": 6,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 70,
+          "maximum_range_cells": 6,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 6,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 32,
+      "packet_cpu": "$925F",
+      "packet_bytes": [
+        60,
+        6,
+        9,
+        0,
+        120,
+        6,
+        1,
+        0,
+        85,
+        6,
+        5,
+        0,
+        80,
+        20,
+        9,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 60,
+          "maximum_range_cells": 6,
+          "area_code": 9,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 120,
+          "maximum_range_cells": 6,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 85,
+          "maximum_range_cells": 6,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 20,
+          "area_code": 9,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 33,
+      "packet_cpu": "$926F",
+      "packet_bytes": [
+        80,
+        6,
+        9,
+        0,
+        150,
+        6,
+        1,
+        0,
+        100,
+        6,
+        5,
+        0,
+        100,
+        20,
+        9,
+        0
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 80,
+          "maximum_range_cells": 6,
+          "area_code": 9,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 150,
+          "maximum_range_cells": 6,
+          "area_code": 1,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 100,
+          "maximum_range_cells": 6,
+          "area_code": 5,
+          "auxiliary_byte": 0
+        },
+        {
+          "effect_magnitude": 100,
+          "maximum_range_cells": 20,
+          "area_code": 9,
+          "auxiliary_byte": 0
+        }
+      ]
+    },
+    {
+      "technique_id": 34,
+      "packet_cpu": "$927F",
+      "packet_bytes": [
+        30,
+        3,
+        1
+      ],
+      "variants": [
+        {
+          "effect_magnitude": 30,
+          "maximum_range_cells": 3,
+          "area_code": 1
+        }
+      ]
+    }
+  ]
+}

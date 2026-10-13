@@ -1,0 +1,1554 @@
+{
+  "source_materials": [
+    "用户提供的说明书和转职流程表：职业名称、分支和技术名称",
+    "用户提供的武将参数图表：逐项转录值保存在本脚本中作为对照数据",
+    "ROM 定长兵种记录与转职代码：战斗属性和实际升级门槛"
+  ],
+  "transcription_status": "职业/类型名称和图表经验值保留为本脚本中的转录数据，并与说明书及 ROM 对照；战斗属性和实际升级门槛取自 ROM 记录/表",
+  "crosscheck": {
+    "movement": "图表展示的类型 ID 0-55 移动值均与 ROM 对应字节完全一致。",
+    "experience_chart_vs_rom": {
+      "matching_level_ids": 54,
+      "mismatches": [
+        {
+          "unit_type_id": 14,
+          "chart": 480,
+          "rom": 400
+        },
+        {
+          "unit_type_id": 17,
+          "chart": 480,
+          "rom": 400
+        }
+      ]
+    },
+    "experience_chart_vs_manual": {
+      "mismatches": [
+        {
+          "unit_type_id": 26,
+          "class": "魔兽将军",
+          "level": 2,
+          "manual": 1400,
+          "chart": 1320
+        },
+        {
+          "unit_type_id": 30,
+          "class": "车骑将军",
+          "level": 2,
+          "manual": 1400,
+          "chart": 1350
+        },
+        {
+          "unit_type_id": 40,
+          "class": "神龙将军",
+          "level": 4,
+          "manual": 2300,
+          "chart": 2200
+        },
+        {
+          "unit_type_id": 45,
+          "class": "虎威将军",
+          "level": 2,
+          "manual": 1300,
+          "chart": 1400
+        }
+      ],
+      "note": "图表与说明书的四个升级门槛不同；这四项的图表值与 ROM 类型记录字段相同。类型 ID 14 和 17 则相反：图表/说明书为 480，ROM 类型记录字段为 400。实际升级比较使用独立 ROM 门槛表。"
+    }
+  },
+  "classes": [
+    {
+      "class_id": 0,
+      "name": "战士",
+      "unit_type_ids": [
+        0
+      ]
+    },
+    {
+      "class_id": 1,
+      "name": "骑兵",
+      "unit_type_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "class_id": 2,
+      "name": "勇士",
+      "unit_type_ids": [
+        3,
+        4
+      ]
+    },
+    {
+      "class_id": 3,
+      "name": "弓兵",
+      "unit_type_ids": [
+        5,
+        6
+      ]
+    },
+    {
+      "class_id": 4,
+      "name": "骠骑大将",
+      "unit_type_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "class_id": 5,
+      "name": "飞马大将",
+      "unit_type_ids": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "class_id": 6,
+      "name": "铁铠大将",
+      "unit_type_ids": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "class_id": 7,
+      "name": "巨剑大将",
+      "unit_type_ids": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "class_id": 8,
+      "name": "弩手",
+      "unit_type_ids": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "class_id": 9,
+      "name": "神箭手",
+      "unit_type_ids": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "class_id": 10,
+      "name": "魔兽将军",
+      "unit_type_ids": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "class_id": 11,
+      "name": "车骑将军",
+      "unit_type_ids": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "class_id": 12,
+      "name": "魔龙将军",
+      "unit_type_ids": [
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "class_id": 13,
+      "name": "神龙将军",
+      "unit_type_ids": [
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "class_id": 14,
+      "name": "金甲将军",
+      "unit_type_ids": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "class_id": 15,
+      "name": "虎威将军",
+      "unit_type_ids": [
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "class_id": 16,
+      "name": "神剑将军",
+      "unit_type_ids": [
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "class_id": 17,
+      "name": "巨斧将军",
+      "unit_type_ids": [
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "class_id": 18,
+      "name": "巨炮将军",
+      "unit_type_ids": [
+        53,
+        54,
+        55
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "from_class_id": 0,
+      "to_class_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "from_class_id": 1,
+      "to_class_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "from_class_id": 2,
+      "to_class_ids": [
+        6,
+        7
+      ]
+    },
+    {
+      "from_class_id": 3,
+      "to_class_ids": [
+        8,
+        9
+      ]
+    },
+    {
+      "from_class_id": 4,
+      "to_class_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "from_class_id": 5,
+      "to_class_ids": [
+        12,
+        13
+      ]
+    },
+    {
+      "from_class_id": 6,
+      "to_class_ids": [
+        14,
+        15
+      ]
+    },
+    {
+      "from_class_id": 7,
+      "to_class_ids": [
+        16,
+        17
+      ]
+    },
+    {
+      "from_class_id": 8,
+      "to_class_ids": [
+        18
+      ]
+    }
+  ],
+  "levels": [
+    {
+      "unit_type_id": 0,
+      "class_id": 0,
+      "class_name": "战士",
+      "level": 0,
+      "max_hp": 100,
+      "attack": 100,
+      "experience_required": 0,
+      "chart_experience_required": 0,
+      "manual_experience_required": null,
+      "defense": 100,
+      "movement_points": 2,
+      "technique_id": null,
+      "graphic_selector": 0,
+      "unresolved_bytes_10_to_12": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 1,
+      "class_id": 1,
+      "class_name": "骑兵",
+      "level": 1,
+      "max_hp": 150,
+      "attack": 110,
+      "experience_required": 100,
+      "chart_experience_required": 100,
+      "manual_experience_required": 100,
+      "defense": 105,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 1,
+      "unresolved_bytes_10_to_12": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 2,
+      "class_id": 1,
+      "class_name": "骑兵",
+      "level": 2,
+      "max_hp": 200,
+      "attack": 120,
+      "experience_required": 180,
+      "chart_experience_required": 180,
+      "manual_experience_required": 180,
+      "defense": 110,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 1,
+      "unresolved_bytes_10_to_12": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 3,
+      "class_id": 2,
+      "class_name": "勇士",
+      "level": 1,
+      "max_hp": 150,
+      "attack": 110,
+      "experience_required": 100,
+      "chart_experience_required": 100,
+      "manual_experience_required": 100,
+      "defense": 110,
+      "movement_points": 2,
+      "technique_id": null,
+      "graphic_selector": 2,
+      "unresolved_bytes_10_to_12": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 4,
+      "class_id": 2,
+      "class_name": "勇士",
+      "level": 2,
+      "max_hp": 200,
+      "attack": 120,
+      "experience_required": 180,
+      "chart_experience_required": 180,
+      "manual_experience_required": 180,
+      "defense": 115,
+      "movement_points": 2,
+      "technique_id": null,
+      "graphic_selector": 2,
+      "unresolved_bytes_10_to_12": [
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 5,
+      "class_id": 3,
+      "class_name": "弓兵",
+      "level": 1,
+      "max_hp": 150,
+      "attack": 100,
+      "experience_required": 100,
+      "chart_experience_required": 100,
+      "manual_experience_required": 100,
+      "defense": 100,
+      "movement_points": 2,
+      "technique_id": 1,
+      "graphic_selector": 3,
+      "unresolved_bytes_10_to_12": [
+        3,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 6,
+      "class_id": 3,
+      "class_name": "弓兵",
+      "level": 2,
+      "max_hp": 200,
+      "attack": 110,
+      "experience_required": 220,
+      "chart_experience_required": 220,
+      "manual_experience_required": 220,
+      "defense": 105,
+      "movement_points": 3,
+      "technique_id": 34,
+      "graphic_selector": 3,
+      "unresolved_bytes_10_to_12": [
+        3,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 7,
+      "class_id": 4,
+      "class_name": "骠骑大将",
+      "level": 1,
+      "max_hp": 250,
+      "attack": 150,
+      "experience_required": 300,
+      "chart_experience_required": 300,
+      "manual_experience_required": 300,
+      "defense": 120,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 4,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 8,
+      "class_id": 4,
+      "class_name": "骠骑大将",
+      "level": 2,
+      "max_hp": 280,
+      "attack": 180,
+      "experience_required": 500,
+      "chart_experience_required": 500,
+      "manual_experience_required": 500,
+      "defense": 125,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 4,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 9,
+      "class_id": 4,
+      "class_name": "骠骑大将",
+      "level": 3,
+      "max_hp": 300,
+      "attack": 210,
+      "experience_required": 750,
+      "chart_experience_required": 750,
+      "manual_experience_required": 750,
+      "defense": 130,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 4,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 10,
+      "class_id": 5,
+      "class_name": "飞马大将",
+      "level": 1,
+      "max_hp": 250,
+      "attack": 150,
+      "experience_required": 300,
+      "chart_experience_required": 300,
+      "manual_experience_required": 300,
+      "defense": 120,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 5,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 11,
+      "class_id": 5,
+      "class_name": "飞马大将",
+      "level": 2,
+      "max_hp": 280,
+      "attack": 170,
+      "experience_required": 500,
+      "chart_experience_required": 500,
+      "manual_experience_required": 500,
+      "defense": 120,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 5,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 12,
+      "class_id": 5,
+      "class_name": "飞马大将",
+      "level": 3,
+      "max_hp": 300,
+      "attack": 200,
+      "experience_required": 800,
+      "chart_experience_required": 800,
+      "manual_experience_required": 800,
+      "defense": 125,
+      "movement_points": 6,
+      "technique_id": null,
+      "graphic_selector": 5,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 13,
+      "class_id": 6,
+      "class_name": "铁铠大将",
+      "level": 1,
+      "max_hp": 220,
+      "attack": 150,
+      "experience_required": 300,
+      "chart_experience_required": 300,
+      "manual_experience_required": 300,
+      "defense": 125,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 6,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 14,
+      "class_id": 6,
+      "class_name": "铁铠大将",
+      "level": 2,
+      "max_hp": 250,
+      "attack": 180,
+      "experience_required": 400,
+      "chart_experience_required": 480,
+      "manual_experience_required": 480,
+      "defense": 130,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 6,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 15,
+      "class_id": 6,
+      "class_name": "铁铠大将",
+      "level": 3,
+      "max_hp": 280,
+      "attack": 210,
+      "experience_required": 720,
+      "chart_experience_required": 720,
+      "manual_experience_required": 720,
+      "defense": 135,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 6,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 16,
+      "class_id": 7,
+      "class_name": "巨剑大将",
+      "level": 1,
+      "max_hp": 220,
+      "attack": 160,
+      "experience_required": 300,
+      "chart_experience_required": 300,
+      "manual_experience_required": null,
+      "defense": 125,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 7,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 17,
+      "class_id": 7,
+      "class_name": "巨剑大将",
+      "level": 2,
+      "max_hp": 250,
+      "attack": 190,
+      "experience_required": 400,
+      "chart_experience_required": 480,
+      "manual_experience_required": null,
+      "defense": 125,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 7,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 18,
+      "class_id": 7,
+      "class_name": "巨剑大将",
+      "level": 3,
+      "max_hp": 280,
+      "attack": 220,
+      "experience_required": 720,
+      "chart_experience_required": 720,
+      "manual_experience_required": null,
+      "defense": 130,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 7,
+      "unresolved_bytes_10_to_12": [
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 19,
+      "class_id": 8,
+      "class_name": "弩手",
+      "level": 1,
+      "max_hp": 250,
+      "attack": 120,
+      "experience_required": 400,
+      "chart_experience_required": 400,
+      "manual_experience_required": 400,
+      "defense": 110,
+      "movement_points": 3,
+      "technique_id": 2,
+      "graphic_selector": 8,
+      "unresolved_bytes_10_to_12": [
+        5,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 20,
+      "class_id": 8,
+      "class_name": "弩手",
+      "level": 2,
+      "max_hp": 280,
+      "attack": 130,
+      "experience_required": 600,
+      "chart_experience_required": 600,
+      "manual_experience_required": 600,
+      "defense": 120,
+      "movement_points": 3,
+      "technique_id": 3,
+      "graphic_selector": 8,
+      "unresolved_bytes_10_to_12": [
+        5,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 21,
+      "class_id": 8,
+      "class_name": "弩手",
+      "level": 3,
+      "max_hp": 300,
+      "attack": 150,
+      "experience_required": 850,
+      "chart_experience_required": 850,
+      "manual_experience_required": 850,
+      "defense": 120,
+      "movement_points": 4,
+      "technique_id": 4,
+      "graphic_selector": 8,
+      "unresolved_bytes_10_to_12": [
+        5,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 22,
+      "class_id": 9,
+      "class_name": "神箭手",
+      "level": 1,
+      "max_hp": 250,
+      "attack": 120,
+      "experience_required": 400,
+      "chart_experience_required": 400,
+      "manual_experience_required": 400,
+      "defense": 110,
+      "movement_points": 3,
+      "technique_id": 5,
+      "graphic_selector": 9,
+      "unresolved_bytes_10_to_12": [
+        5,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 23,
+      "class_id": 9,
+      "class_name": "神箭手",
+      "level": 2,
+      "max_hp": 280,
+      "attack": 140,
+      "experience_required": 880,
+      "chart_experience_required": 880,
+      "manual_experience_required": 880,
+      "defense": 125,
+      "movement_points": 4,
+      "technique_id": 6,
+      "graphic_selector": 9,
+      "unresolved_bytes_10_to_12": [
+        6,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 24,
+      "class_id": 9,
+      "class_name": "神箭手",
+      "level": 3,
+      "max_hp": 320,
+      "attack": 150,
+      "experience_required": 2000,
+      "chart_experience_required": 2000,
+      "manual_experience_required": 2000,
+      "defense": 135,
+      "movement_points": 4,
+      "technique_id": 7,
+      "graphic_selector": 9,
+      "unresolved_bytes_10_to_12": [
+        6,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 25,
+      "class_id": 10,
+      "class_name": "魔兽将军",
+      "level": 1,
+      "max_hp": 330,
+      "attack": 230,
+      "experience_required": 1000,
+      "chart_experience_required": 1000,
+      "manual_experience_required": 1000,
+      "defense": 135,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 10,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 26,
+      "class_id": 10,
+      "class_name": "魔兽将军",
+      "level": 2,
+      "max_hp": 380,
+      "attack": 250,
+      "experience_required": 1320,
+      "chart_experience_required": 1320,
+      "manual_experience_required": 1400,
+      "defense": 140,
+      "movement_points": 6,
+      "technique_id": null,
+      "graphic_selector": 10,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 27,
+      "class_id": 10,
+      "class_name": "魔兽将军",
+      "level": 3,
+      "max_hp": 430,
+      "attack": 260,
+      "experience_required": 1650,
+      "chart_experience_required": 1650,
+      "manual_experience_required": 1650,
+      "defense": 145,
+      "movement_points": 6,
+      "technique_id": null,
+      "graphic_selector": 10,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 28,
+      "class_id": 10,
+      "class_name": "魔兽将军",
+      "level": 4,
+      "max_hp": 500,
+      "attack": 280,
+      "experience_required": 2300,
+      "chart_experience_required": 2300,
+      "manual_experience_required": 2300,
+      "defense": 150,
+      "movement_points": 7,
+      "technique_id": null,
+      "graphic_selector": 10,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 29,
+      "class_id": 11,
+      "class_name": "车骑将军",
+      "level": 1,
+      "max_hp": 330,
+      "attack": 220,
+      "experience_required": 1000,
+      "chart_experience_required": 1000,
+      "manual_experience_required": 1000,
+      "defense": 135,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 11,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 30,
+      "class_id": 11,
+      "class_name": "车骑将军",
+      "level": 2,
+      "max_hp": 380,
+      "attack": 240,
+      "experience_required": 1350,
+      "chart_experience_required": 1350,
+      "manual_experience_required": 1400,
+      "defense": 140,
+      "movement_points": 5,
+      "technique_id": null,
+      "graphic_selector": 11,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 31,
+      "class_id": 11,
+      "class_name": "车骑将军",
+      "level": 3,
+      "max_hp": 420,
+      "attack": 260,
+      "experience_required": 1700,
+      "chart_experience_required": 1700,
+      "manual_experience_required": 1700,
+      "defense": 145,
+      "movement_points": 6,
+      "technique_id": null,
+      "graphic_selector": 11,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 32,
+      "class_id": 11,
+      "class_name": "车骑将军",
+      "level": 4,
+      "max_hp": 460,
+      "attack": 280,
+      "experience_required": 2500,
+      "chart_experience_required": 2500,
+      "manual_experience_required": null,
+      "defense": 150,
+      "movement_points": 6,
+      "technique_id": null,
+      "graphic_selector": 11,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 33,
+      "class_id": 12,
+      "class_name": "魔龙将军",
+      "level": 1,
+      "max_hp": 330,
+      "attack": 220,
+      "experience_required": 950,
+      "chart_experience_required": 950,
+      "manual_experience_required": 950,
+      "defense": 130,
+      "movement_points": 6,
+      "technique_id": 11,
+      "graphic_selector": 12,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 34,
+      "class_id": 12,
+      "class_name": "魔龙将军",
+      "level": 2,
+      "max_hp": 380,
+      "attack": 240,
+      "experience_required": 1300,
+      "chart_experience_required": 1300,
+      "manual_experience_required": 1300,
+      "defense": 130,
+      "movement_points": 7,
+      "technique_id": 12,
+      "graphic_selector": 12,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 35,
+      "class_id": 12,
+      "class_name": "魔龙将军",
+      "level": 3,
+      "max_hp": 410,
+      "attack": 250,
+      "experience_required": 1700,
+      "chart_experience_required": 1700,
+      "manual_experience_required": 1700,
+      "defense": 135,
+      "movement_points": 7,
+      "technique_id": 13,
+      "graphic_selector": 12,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 36,
+      "class_id": 12,
+      "class_name": "魔龙将军",
+      "level": 4,
+      "max_hp": 450,
+      "attack": 260,
+      "experience_required": 2300,
+      "chart_experience_required": 2300,
+      "manual_experience_required": 2300,
+      "defense": 140,
+      "movement_points": 8,
+      "technique_id": 14,
+      "graphic_selector": 12,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 37,
+      "class_id": 13,
+      "class_name": "神龙将军",
+      "level": 1,
+      "max_hp": 330,
+      "attack": 210,
+      "experience_required": 950,
+      "chart_experience_required": 950,
+      "manual_experience_required": 950,
+      "defense": 130,
+      "movement_points": 7,
+      "technique_id": 15,
+      "graphic_selector": 13,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 38,
+      "class_id": 13,
+      "class_name": "神龙将军",
+      "level": 2,
+      "max_hp": 380,
+      "attack": 230,
+      "experience_required": 1300,
+      "chart_experience_required": 1300,
+      "manual_experience_required": 1300,
+      "defense": 135,
+      "movement_points": 7,
+      "technique_id": 16,
+      "graphic_selector": 13,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 39,
+      "class_id": 13,
+      "class_name": "神龙将军",
+      "level": 3,
+      "max_hp": 420,
+      "attack": 240,
+      "experience_required": 1700,
+      "chart_experience_required": 1700,
+      "manual_experience_required": 1700,
+      "defense": 135,
+      "movement_points": 8,
+      "technique_id": 17,
+      "graphic_selector": 13,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 40,
+      "class_id": 13,
+      "class_name": "神龙将军",
+      "level": 4,
+      "max_hp": 460,
+      "attack": 260,
+      "experience_required": 2200,
+      "chart_experience_required": 2200,
+      "manual_experience_required": 2300,
+      "defense": 140,
+      "movement_points": 8,
+      "technique_id": 18,
+      "graphic_selector": 13,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 41,
+      "class_id": 14,
+      "class_name": "金甲将军",
+      "level": 1,
+      "max_hp": 310,
+      "attack": 220,
+      "experience_required": 1000,
+      "chart_experience_required": 1000,
+      "manual_experience_required": 1000,
+      "defense": 150,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 14,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 42,
+      "class_id": 14,
+      "class_name": "金甲将军",
+      "level": 2,
+      "max_hp": 360,
+      "attack": 240,
+      "experience_required": 1350,
+      "chart_experience_required": 1350,
+      "manual_experience_required": 1350,
+      "defense": 165,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 14,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 43,
+      "class_id": 14,
+      "class_name": "金甲将军",
+      "level": 3,
+      "max_hp": 420,
+      "attack": 260,
+      "experience_required": 2000,
+      "chart_experience_required": 2000,
+      "manual_experience_required": 2000,
+      "defense": 190,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 14,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 44,
+      "class_id": 15,
+      "class_name": "虎威将军",
+      "level": 1,
+      "max_hp": 320,
+      "attack": 230,
+      "experience_required": 1000,
+      "chart_experience_required": 1000,
+      "manual_experience_required": 1000,
+      "defense": 150,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 15,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 45,
+      "class_id": 15,
+      "class_name": "虎威将军",
+      "level": 2,
+      "max_hp": 370,
+      "attack": 250,
+      "experience_required": 1400,
+      "chart_experience_required": 1400,
+      "manual_experience_required": 1300,
+      "defense": 165,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 15,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 46,
+      "class_id": 15,
+      "class_name": "虎威将军",
+      "level": 3,
+      "max_hp": 430,
+      "attack": 270,
+      "experience_required": 2180,
+      "chart_experience_required": 2180,
+      "manual_experience_required": 2180,
+      "defense": 180,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 15,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 47,
+      "class_id": 16,
+      "class_name": "神剑将军",
+      "level": 1,
+      "max_hp": 320,
+      "attack": 240,
+      "experience_required": 1000,
+      "chart_experience_required": 1000,
+      "manual_experience_required": 1000,
+      "defense": 135,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 16,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 48,
+      "class_id": 16,
+      "class_name": "神剑将军",
+      "level": 2,
+      "max_hp": 370,
+      "attack": 270,
+      "experience_required": 1400,
+      "chart_experience_required": 1400,
+      "manual_experience_required": 1400,
+      "defense": 140,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 16,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 49,
+      "class_id": 16,
+      "class_name": "神剑将军",
+      "level": 3,
+      "max_hp": 430,
+      "attack": 300,
+      "experience_required": 2180,
+      "chart_experience_required": 2180,
+      "manual_experience_required": 2180,
+      "defense": 145,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 16,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 50,
+      "class_id": 17,
+      "class_name": "巨斧将军",
+      "level": 1,
+      "max_hp": 320,
+      "attack": 250,
+      "experience_required": 1000,
+      "chart_experience_required": 1000,
+      "manual_experience_required": 1000,
+      "defense": 135,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 17,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 51,
+      "class_id": 17,
+      "class_name": "巨斧将军",
+      "level": 2,
+      "max_hp": 370,
+      "attack": 280,
+      "experience_required": 1400,
+      "chart_experience_required": 1400,
+      "manual_experience_required": 1400,
+      "defense": 140,
+      "movement_points": 3,
+      "technique_id": null,
+      "graphic_selector": 17,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 52,
+      "class_id": 17,
+      "class_name": "巨斧将军",
+      "level": 3,
+      "max_hp": 430,
+      "attack": 310,
+      "experience_required": 2180,
+      "chart_experience_required": 2180,
+      "manual_experience_required": 2180,
+      "defense": 140,
+      "movement_points": 4,
+      "technique_id": null,
+      "graphic_selector": 17,
+      "unresolved_bytes_10_to_12": [
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "unit_type_id": 53,
+      "class_id": 18,
+      "class_name": "巨炮将军",
+      "level": 1,
+      "max_hp": 320,
+      "attack": 160,
+      "experience_required": 1100,
+      "chart_experience_required": 1100,
+      "manual_experience_required": 1100,
+      "defense": 125,
+      "movement_points": 4,
+      "technique_id": 8,
+      "graphic_selector": 18,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 54,
+      "class_id": 18,
+      "class_name": "巨炮将军",
+      "level": 2,
+      "max_hp": 350,
+      "attack": 180,
+      "experience_required": 1400,
+      "chart_experience_required": 1400,
+      "manual_experience_required": 1400,
+      "defense": 130,
+      "movement_points": 4,
+      "technique_id": 9,
+      "graphic_selector": 18,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    },
+    {
+      "unit_type_id": 55,
+      "class_id": 18,
+      "class_name": "巨炮将军",
+      "level": 3,
+      "max_hp": 380,
+      "attack": 200,
+      "experience_required": 2000,
+      "chart_experience_required": 2000,
+      "manual_experience_required": 2000,
+      "defense": 130,
+      "movement_points": 5,
+      "technique_id": 10,
+      "graphic_selector": 18,
+      "unresolved_bytes_10_to_12": [
+        7,
+        5,
+        1
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "technique_id": 1,
+      "name": "射击",
+      "range": "2",
+      "area": 1,
+      "effect": -20
+    },
+    {
+      "technique_id": 34,
+      "name": "射击",
+      "range": "1-3",
+      "area": 1,
+      "effect": -30
+    },
+    {
+      "technique_id": 2,
+      "name": "重击",
+      "range": "2-3",
+      "area": 1,
+      "effect": -45
+    },
+    {
+      "technique_id": 3,
+      "name": "高级重击",
+      "range": "2-3",
+      "area": 5,
+      "effect": -40
+    },
+    {
+      "technique_id": 4,
+      "name": "超级重击",
+      "range": "2-4",
+      "area": 5,
+      "effect": -50
+    },
+    {
+      "technique_id": 5,
+      "name": "神箭",
+      "range": "2-4",
+      "area": 1,
+      "effect": -50
+    },
+    {
+      "technique_id": 6,
+      "name": "火枪",
+      "range": "2-4",
+      "area": 1,
+      "effect": -80
+    },
+    {
+      "technique_id": 7,
+      "name": "火箭",
+      "range": "2-5",
+      "area": 1,
+      "effect": -95
+    },
+    {
+      "technique_id": 8,
+      "name": "炮击",
+      "range": "2-5",
+      "area": 1,
+      "effect": -80
+    },
+    {
+      "technique_id": 9,
+      "name": "重炮",
+      "range": "2-6",
+      "area": 5,
+      "effect": -80
+    },
+    {
+      "technique_id": 10,
+      "name": "飞弹",
+      "range": "2-8",
+      "area": 9,
+      "effect": -80
+    },
+    {
+      "technique_id": 11,
+      "name": "猛龙尾扫",
+      "range": "0",
+      "area": 4,
+      "effect": -50
+    },
+    {
+      "technique_id": 12,
+      "name": "恶龙尾扫",
+      "range": "0",
+      "area": 4,
+      "effect": -60
+    },
+    {
+      "technique_id": 13,
+      "name": "大龙压",
+      "range": "0",
+      "area": 4,
+      "effect": -75
+    },
+    {
+      "technique_id": 14,
+      "name": "巨龙压",
+      "range": "0-1",
+      "area": 4,
+      "effect": -80
+    },
+    {
+      "technique_id": 15,
+      "name": "神龙雷鸣",
+      "range": "1-2",
+      "area": 1,
+      "effect": -60
+    },
+    {
+      "technique_id": 16,
+      "name": "神龙雷击",
+      "range": "1-3",
+      "area": 1,
+      "effect": -75
+    },
+    {
+      "technique_id": 17,
+      "name": "神龙电击",
+      "range": "1-4",
+      "area": 1,
+      "effect": -85
+    },
+    {
+      "technique_id": 18,
+      "name": "神龙雷电",
+      "range": "1-4",
+      "area": 1,
+      "effect": -100
+    }
+  ],
+  "coverage_note": "参数图表转录覆盖至类型 ID 55。图表未命名 ROM 类型 56-71；其数值属性和成长信息保存在 ROM 派生数据中，部分职业名称仍未确认。"
+}

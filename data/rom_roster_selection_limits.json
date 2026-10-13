@@ -1,0 +1,67 @@
+{
+  "source_prg_bank": 10,
+  "stage_range": [
+    10,
+    18
+  ],
+  "cap_ram_address": "$05EF",
+  "current_count_ram_address": "$6813",
+  "add_routine": "$8BA0-$8BCF",
+  "records": [
+    {
+      "stage_index": 10,
+      "max_selected_units": 8,
+      "source_pointer": "$8D50",
+      "cap_source_address": "$8D51"
+    },
+    {
+      "stage_index": 11,
+      "max_selected_units": 6,
+      "source_pointer": "$8D5E",
+      "cap_source_address": "$8D5F"
+    },
+    {
+      "stage_index": 12,
+      "max_selected_units": 8,
+      "source_pointer": "$8D6C",
+      "cap_source_address": "$8D6D"
+    },
+    {
+      "stage_index": 13,
+      "max_selected_units": 8,
+      "source_pointer": "$8D6C",
+      "cap_source_address": "$8D6D"
+    },
+    {
+      "stage_index": 14,
+      "max_selected_units": 10,
+      "source_pointer": "$8D80",
+      "cap_source_address": "$8D81"
+    },
+    {
+      "stage_index": 15,
+      "max_selected_units": 10,
+      "source_pointer": "$8D80",
+      "cap_source_address": "$8D81"
+    },
+    {
+      "stage_index": 16,
+      "max_selected_units": 10,
+      "source_pointer": "$8D80",
+      "cap_source_address": "$8D81"
+    },
+    {
+      "stage_index": 17,
+      "max_selected_units": 10,
+      "source_pointer": "$8D80",
+      "cap_source_address": "$8D81"
+    },
+    {
+      "stage_index": 18,
+      "max_selected_units": 12,
+      "source_pointer": "$8D9A",
+      "cap_source_address": "$8D9B"
+    }
+  ],
+  "limitations": "This table establishes caps only for stages 10-18. The selection-cap path for stages 0-9 is not established by this table."
+}

@@ -1,0 +1,39 @@
+{
+  "stage_index": 11,
+  "status": "ROM-derived color composition candidate; not compared with live screenshot",
+  "renderer": "tools/render_battle_stage_preview.py",
+  "battle_records": "data/rom_battle_stage_records.json",
+  "base_chr": "assets/rom_reference/rom_prg60_src_82bc_ppu_1000.bin",
+  "rgb_palette": "assets/rom_reference/rom_stage00_reference_display.pal",
+  "overlays": [
+    [
+      "assets/rom_reference/rom_prg11_src_c64a_ppu_1000.bin",
+      "0x1000"
+    ],
+    [
+      "assets/rom_reference/rom_prg11_src_ca2e_ppu_1400.bin",
+      "0x1400"
+    ],
+    [
+      "assets/rom_reference/rom_prg11_src_ceb0_ppu_1a00.bin",
+      "0x1A00"
+    ],
+    [
+      "assets/rom_reference/rom_battle_shared_chr_00_ppu_1700.bin",
+      "0x1700"
+    ],
+    [
+      "assets/rom_reference/rom_battle_shared_chr_01_ppu_1910.bin",
+      "0x1910"
+    ],
+    [
+      "assets/rom_reference/rom_battle_stage_11_chr_ppu_1010.bin",
+      "0x1010"
+    ]
+  ],
+  "output": "assets/rom_reference/rom_battle_stage_candidate_11_color.png",
+  "dimensions": [
+    256,
+    480
+  ]
+}

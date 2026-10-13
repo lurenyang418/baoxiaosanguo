@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg4_src_d2c2_ppu_1010_ppu_1010_tiles.png" id="stream_0"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg4_src_dc46_ppu_1010_ppu_1010_tiles.png" id="stream_1"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg4_src_e36a_ppu_1010_ppu_1010_tiles.png" id="stream_2"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg4_src_e9be_ppu_1010_ppu_1010_tiles.png" id="stream_3"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg4_src_f072_ppu_1010_ppu_1010_tiles.png" id="stream_4"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg4_src_f756_ppu_1010_ppu_1010_tiles.png" id="stream_5"]
+
+[node name="RomBank4Callback1Streams" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+offset_right = 512.0
+offset_bottom = 240.0
+horizontal_scroll_mode = 3
+
+[node name="Items" type="VBoxContainer" parent="Scroll"]
+custom_minimum_size = Vector2(512, 0)
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Intro" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 32)
+text = "Bank 4 callback entry 1 · six streams selected through $05ED · all target PPU $1010 · meaning unconfirmed"
+
+[node name="Label0" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 0 · source $D2C2 · 825 bytes → PPU $1010"
+
+[node name="Stream0" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 128)
+texture = ExtResource("stream_0")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label1" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 1 · source $DC46 · 996 bytes → PPU $1010"
+
+[node name="Stream1" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 128)
+texture = ExtResource("stream_1")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label2" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 2 · source $E36A · 886 bytes → PPU $1010"
+
+[node name="Stream2" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 128)
+texture = ExtResource("stream_2")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label3" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 3 · source $E9BE · 677 bytes → PPU $1010"
+
+[node name="Stream3" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 128)
+texture = ExtResource("stream_3")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label4" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 4 · source $F072 · 680 bytes → PPU $1010"
+
+[node name="Stream4" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 128)
+texture = ExtResource("stream_4")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label5" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 5 · source $F756 · 892 bytes → PPU $1010"
+
+[node name="Stream5" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 128)
+texture = ExtResource("stream_5")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1

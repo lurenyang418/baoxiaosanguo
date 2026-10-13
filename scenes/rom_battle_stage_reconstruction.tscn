@@ -1,0 +1,252 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_00.png" id="stage_00"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_01.png" id="stage_01"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_02.png" id="stage_02"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_03.png" id="stage_03"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_04.png" id="stage_04"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_05.png" id="stage_05"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_06.png" id="stage_06"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_07.png" id="stage_07"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_08.png" id="stage_08"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_09.png" id="stage_09"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_10.png" id="stage_10"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_11.png" id="stage_11"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_12.png" id="stage_12"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_13.png" id="stage_13"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_14.png" id="stage_14"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_15.png" id="stage_15"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_16.png" id="stage_16"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_17.png" id="stage_17"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_candidate_18.png" id="stage_18"]
+
+[node name="RomBattleStageReconstruction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+offset_right = 512.0
+offset_bottom = 240.0
+horizontal_scroll_mode = 3
+
+[node name="Items" type="VBoxContainer" parent="Scroll"]
+custom_minimum_size = Vector2(512, 0)
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Intro" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 28)
+text = "ROM-derived battle map candidates · grayscale · CHR page mapping needs runtime confirmation"
+
+[node name="Label00" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 00 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map00" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_00")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label01" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 01 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map01" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_01")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label02" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 02 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map02" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_02")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label03" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 03 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map03" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_03")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label04" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 04 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map04" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_04")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label05" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 05 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map05" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_05")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label06" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 06 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map06" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_06")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label07" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 07 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map07" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_07")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label08" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 08 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map08" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_08")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label09" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 09 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map09" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_09")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label10" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 10 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map10" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_10")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label11" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 11 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map11" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_11")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label12" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 12 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map12" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_12")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label13" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 13 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map13" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_13")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label14" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 14 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map14" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_14")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label15" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 15 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map15" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_15")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label16" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 16 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map16" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_16")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label17" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 17 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map17" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_17")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label18" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Stage 18 · map/tile composition + boot CHR candidate + shared/stage overlays"
+
+[node name="Map18" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 240)
+texture = ExtResource("stage_18")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1

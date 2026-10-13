@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg10_src_99a6_ppu_1010_tiles.png" id="1_chr_preview"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_c64a_ppu_1000_tiles.png" id="2_chr_preview"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_f4c8_ppu_0010_tiles.png" id="3_chr_preview"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg10_src_9dba_ppu_1420_tiles.png" id="4_chr_preview"]
+
+[node name="RomChrPreview" type="Node2D"]
+
+[node name="Callback0Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 248.0
+offset_bottom = 22.0
+text = "Callback 0 · PPU $1010"
+
+[node name="Callback0Tiles" type="Sprite2D" parent="."]
+texture = ExtResource("1_chr_preview")
+position = Vector2(128, 42)
+scale = Vector2(0.5, 0.5)
+texture_filter = 1
+
+[node name="Callback1Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 248.0
+offset_bottom = 98.0
+text = "Callback 1 · PPU $1000"
+
+[node name="Callback1Tiles" type="Sprite2D" parent="."]
+texture = ExtResource("2_chr_preview")
+position = Vector2(128, 118)
+scale = Vector2(0.5, 0.5)
+texture_filter = 1
+
+[node name="Callback2Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 154.0
+offset_right = 248.0
+offset_bottom = 172.0
+text = "Callback 2 pre-upload · PPU $0010"
+
+[node name="Callback2Tiles" type="Sprite2D" parent="."]
+texture = ExtResource("3_chr_preview")
+position = Vector2(128, 192)
+scale = Vector2(0.5, 0.5)
+texture_filter = 1
+
+[node name="Callback3Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 204.0
+offset_right = 248.0
+offset_bottom = 222.0
+text = "Bank 10 routine $9050 · PPU $1420"
+
+[node name="Callback3Tiles" type="Sprite2D" parent="."]
+texture = ExtResource("4_chr_preview")
+position = Vector2(128, 231)
+scale = Vector2(0.5, 0.5)
+texture_filter = 1

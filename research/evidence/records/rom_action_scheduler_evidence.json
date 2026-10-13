@@ -1,0 +1,437 @@
+{
+  "source": "BaoXiaoSanGuo/BaoXiaoSanGuo(ES1005)(ChS)(970261).nes",
+  "action_list": {
+    "count_ram": "$6822",
+    "slot_array_ram": "$6816",
+    "current_slot_ram": "$6408"
+  },
+  "unit_state_ram": "$6789 + slot",
+  "evidence_windows": [
+    {
+      "bank": 0,
+      "cpu_start": "$8159",
+      "cpu_end_exclusive": "$817F",
+      "bytes_hex": "4c d6 c0 ad 14 68 c9 ff d0 15 a9 15 8d dc 60 a9 01 8d de 60 a9 00 8d dd 60 20 50 ff 4c 5a c0 ee 00 64 ad 00 64 c9",
+      "meaning": "Outer campaign loop handles first-slot defeat and increments stage index after success"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$8135",
+      "cpu_end_exclusive": "$8144",
+      "bytes_hex": "90 bd a2 00 a9 00 9d 89 67 e8 ec 16 64 d0 f5",
+      "meaning": "Initialize all $6789 slot states to zero"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$806C",
+      "cpu_end_exclusive": "$8078",
+      "bytes_hex": "b1 1e 9d 8f 64 c8 b1 1e 9d b7 64 c8",
+      "meaning": "Copy stage-layout Y then X bytes to $648F and $64B7"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$886C",
+      "cpu_end_exclusive": "$8882",
+      "bytes_hex": "bd b7 64 0a 0a 0a 0a 8d 16 06 bd 8f 64 38 ed 02 68 0a 0a 0a 0a 8d",
+      "meaning": "Render $648F with vertical scroll and $64B7 on the other axis"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8175",
+      "cpu_end_exclusive": "$817A",
+      "bytes_hex": "a9 00 8d 22 68",
+      "meaning": "Zero action-list count during battle setup"
+    },
+    {
+      "bank": 10,
+      "cpu_start": "$81BD",
+      "cpu_end_exclusive": "$81D1",
+      "bytes_hex": "4c eb 80 20 d0 83 ad cc 05 d0 08 a9 fd 8d cd 05 4c 37 82 c9",
+      "meaning": "Confirmed menu index 0 sets result $FD"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8300",
+      "cpu_end_exclusive": "$8336",
+      "bytes_hex": "ad 22 68 f0 19 8a 48 a2 00 ad 08 64 dd 16 68 d0 05 68 aa 4c 88 83 e8 ec 22 68 d0 ed 68 aa 8a 48 ae 08 64 bd 89 67 c9 01 d0 14 ae 22 68 ad 08 64 9d 16 68 ee 22 68",
+      "meaning": "Check current slot against list; append on one path"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$833E",
+      "cpu_end_exclusive": "$835A",
+      "bytes_hex": "68 aa 20 f4 86 ad 00 64 c9 0b d0 0d 20 a2 9a ad cc 05 c9 ff d0 03 4c 9d 83 ad 15 68",
+      "meaning": "One battle-loop call to the stage-specific $9AA2 result routine"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8361",
+      "cpu_end_exclusive": "$838B",
+      "bytes_hex": "ad 22 68 8d c7 05 8a 48 a2 00 bd 89 67 c9 ff d0 03 ee c7 05 e8 ec 13 64 d0 f0 68 aa ad c7 05 cd 13 64 90 03 4c 63 85 4c 7d 81",
+      "meaning": "After each action, add defeated player slots to the $6822 processed count; when the sum reaches $6413, branch to $8563 and advance the phase automatically"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$84A4",
+      "cpu_end_exclusive": "$84D5",
+      "bytes_hex": "05 c9 fd f0 03 4c 7d 81 8a 48 a9 00 8d 08 64 ad 22 68 d0 49 ae 08 64 bd 89 67 f0 1a ae 22 68 ad 08 64 9d 16 68 ee 22 68 ee 08 64 ad 08 64 cd 13 64",
+      "meaning": "Check $FD menu result; start whole-army slot loop"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8501",
+      "cpu_end_exclusive": "$8560",
+      "bytes_hex": "ae 08 64 bd 89 67 f0 1a ae 22 68 ad 08 64 9d 16 68 ee 22 68 ee 08 64 ad 08 64 cd 13 64 b0 41 4c 01 85 a2 00 ad 08 64 dd 16 68 d0 0e ee 08 64 ad 08 64 cd 13 64 b0 29 4c 01 85 e8 ec 22 68 d0 e4 20 8d 99 20 67 88 ae 22 68 ad 08 64 9d 16 68 ee 22 68 20 bd a3 ee 08 64 ad 08 64 cd 13 64 90",
+      "meaning": "Continue slot loop, list checks and appends"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8559",
+      "cpu_end_exclusive": "$8575",
+      "bytes_hex": "ad 08 64 cd 13 64 90 a0 68 aa 20 a2 9a ad cc 05 c9 ff d0 03 4c 9d 83 8a 48 a2 00 bd",
+      "meaning": "Second battle-loop call to $9AA2 and immediate $05CC=$FF exit check"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8571",
+      "cpu_end_exclusive": "$8583",
+      "bytes_hex": "48 a2 00 bd 89 67 c9 01 d0 05 a9 00 9d 89 67 e8 ec 13",
+      "meaning": "Clear $6789 state 1 for one slot group"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8586",
+      "cpu_end_exclusive": "$85A1",
+      "bytes_hex": "68 aa 20 64 a7 ad 15 68 c9 ff d0 03 4c 9d 83 ad 14 68 c9 ff d0 06 ce 00 64 4c 9d",
+      "meaning": "Run opponent phase, then inspect victory and first-slot defeat flags"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$85A3",
+      "cpu_end_exclusive": "$85D5",
+      "bytes_hex": "48 ae 13 64 bd 89 67 c9 01 d0 05 a9 00 9d 89 67 e8 ec 16 64 d0 ee 68 aa a0 00 8c 22 68 b9 89 67 c9 ff d0 04 c8 4c c0 85 8c 08 64 20 8d 99 20 bd a3 4c",
+      "meaning": "Update state, clear count, seek next live slot"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$9312",
+      "cpu_end_exclusive": "$9339",
+      "bytes_hex": "ad 89 67 c9 ff d0 05 a9 ff 8d 14 68 ad 13 64 18 6d 15 64 a8 b9 89 67 c9 ff d0 0b c8 cc 16 64 d0 f3 a9 ff 8d 15 68 68",
+      "meaning": "Set $6814 on first player death; set $6815 when group 2 is gone"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$9AA2",
+      "cpu_end_exclusive": "$9AF0",
+      "bytes_hex": "ad 00 64 c9 04 d0 12 ad 8f 64 c9 0f 90 03 4c ef 9a a9 ff 8d cc 05 4c ef 9a c9 05 d0 0a ad 8f 64 c9 1d f0 ed 4c ef 9a c9 08 d0 11 ad 8f 64 c9 0d b0 1b ad b7 64 c9 0c 90 14 4c b3 9a c9 0b d0 0d ac 13 64 b9 89 67 c9 ff d0 03 4c b3 9a 60",
+      "meaning": "Stage 4 first player Y <15, stage 5 Y =29, stage 8 Y <13 with X >=12, and stage 11 first group-2 slot state $FF set the special exit flag"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A764",
+      "cpu_end_exclusive": "$A839",
+      "bytes_hex": "98 48 8a 48 ad 15 64 d0 03 4c 39 a8 ac 13 64 8c 08 64 b9 89 67 c9 ff d0 03 4c 1a a8 c9 01 d0 06 20 8d 99 4c 1a a8 20 8d 99 98 48 0a a8 b9 57 65 8d 04 06 b9 58 65 8d 05 06 a9 03 8d 06 06 a9 00 8d 07 06 20 e2 9d b9 a7 65 38 ed 04 06 b9 a8 65 ed 05 06 b0 0f ad d4 05 29 01 f0 08 68 a8 20 b3 b5 4c 1a a8 68 a8 a2 00 b9 67 64 dd 3a aa d0 03 4c f1 a7 e8 e0 06 d0 f0 a2 00 b9 67 64 dd 40 aa d0 03 4c f1 a7 e8 e0 04 d0 f0 4c 07 a8 20 90 ac ad 09 64 c9 ff f0 06 20 6f ae 4c 1a a8 20 f3 b4 4c 1a a8 20 c0 aa ad 09 64 c9 ff f0 06 20 d4 ae 4c 1a a8 20 f3 b4 ad 15 68 c9 ff d0 05 68 aa 68 a8 60 c8 ad 13 64 18 6d 15 64 8d c7 05 cc c7 05 f0 03 4c 73 a7",
+      "meaning": "Automatic processing of group 1 and handoff to group 2"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A7B7",
+      "cpu_end_exclusive": "$A818",
+      "bytes_hex": "b0 0f ad d4 05 29 01 f0 08 68 a8 20 b3 b5 4c 1a a8 68 a8 a2 00 b9 67 64 dd 3a aa d0 03 4c f1 a7 e8 e0 06 d0 f0 a2 00 b9 67 64 dd 40 aa d0 03 4c f1 a7 e8 e0 04 d0 f0 4c 07 a8 20 90 ac ad 09 64 c9 ff f0 06 20 6f ae 4c 1a a8 20 f3 b4 4c 1a a8 20 c0 aa ad 09 64 c9 ff f0 06 20 d4 ae 4c 1a a8 20",
+      "meaning": "Group-1 low-HP frame rest and selector-table skill-versus-adjacent dispatch"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AA40",
+      "cpu_end_exclusive": "$AA44",
+      "bytes_hex": "03 08 09 12",
+      "meaning": "Group-1 graphic selector special table includes selector 3 for type 5"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AAC0",
+      "cpu_end_exclusive": "$AB3A",
+      "bytes_hex": "8a 48 98 48 ac 08 64 a9 ff 8d 09 64 a9 00 8d d0 60 ad 13 64 18 6d 15 64 aa bd b7 64 d9 b7 64 f0 03 4c 0e ab bd 8f 64 18 69 01 d9 8f 64 f0 0e bd 8f 64 38 e9 01 d9 8f 64 f0 03 4c 2c ab 98 48 ac d0 60 8a 99 c8 60 ee d0 60 68 a8 4c 2c ab bd 8f 64 d9 8f 64 d0 16 bd b7 64 18 69 01 d9 b7 64 f0 dc bd b7 64 38 e9 01 d9 b7 64 f0 d1 e8 ec 16 64 d0 a7 20 24 9a 68 a8 68 aa 60",
+      "meaning": "Group-1 adjacent-target scan begins after player and group-1 slots, targeting group 2"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AC90",
+      "cpu_end_exclusive": "$ACB0",
+      "bytes_hex": "8a 48 98 48 ac 08 64 a9 ff 8d 09 64 b9 3f 64 aa bd 02 ac 8d 0f 67 bd 49 ac 8d 10 67 a9 00 8d d0",
+      "meaning": "Group-1 range scan initializes its type-indexed range and area"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AE6F",
+      "cpu_end_exclusive": "$AEBE",
+      "bytes_hex": "ac 08 64 b9 e7 66 d0 03 4c bd ae 20 90 ac ad 09 64 c9 ff d0 03 4c bd ae 98 48 a9 00 8d cd 05 b9 3f 64 c9 38 90 05 a9 01 8d cd 05 ad 08 64 48 ad 09 64 8d 08 64 20 8d 99 68 8d 08 64 a9 04 8d dc 60 8d de 60 a9 01 8d dd 60 20 50 ff 68 a8 60",
+      "meaning": "Group-1 technique dispatch uses range scan and skill packet variant"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AED4",
+      "cpu_end_exclusive": "$AEDA",
+      "bytes_hex": "20 c0 aa 4c c1 ae",
+      "meaning": "Group-1 ordinary attack dispatch scans group-2 targets"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$B4F3",
+      "cpu_end_exclusive": "$B5B3",
+      "bytes_hex": "98 48 8a 48 a9 01 8d f3 05 ae 08 64 bd 89 67 c9 01 d0 03 4c 10 b5 c9 ff f0 03 4c 15 b5 68 aa 68 a8 60 a9 00 8d f4 05 ad 13 64 18 6d 15 64 a8 b9 8f 64 c9 ff d0 04 c8 4c 22 b5 bd 8f 64 d9 8f 64 90 17 f0 27 bd 8f 64 38 f9 8f 64 8d f6 05 ad f4 05 09 08 8d f4 05 4c 5e b5 b9 8f 64 38 fd 8f 64 8d f6 05 ad f4 05 09 04 8d f4 05 bd b7 64 d9 b7 64 90 17 f0 27 bd b7 64 38 f9 b7 64 8d f5 05 ad f4 05 09 02 8d f4 05 4c 8f b5 b9 b7 64 38 fd b7 64 8d f5 05 ad f4 05 09 01 8d f4 05 a9 00 8d e4 05 a9 01 8d f7 05 ad f4 05 29 0c 8d cf 05 d0 0d ad f4 05 29 03 8d cf 05 a9 02 8d f7 05 4c 92 af",
+      "meaning": "Group-1 no-target movement seeks first available group-2 slot and compares coordinates"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A839",
+      "cpu_end_exclusive": "$AA36",
+      "bytes_hex": "ac 16 64 88 b9 89 67 c9 ff d0 03 4c 3c a8 8c 08 64 ad 00 64 c9 06 f0 0b c9 07 f0 07 c9 09 f0 03 4c 5f a8 20 f0 9a 20 8d 99 20 9a 9a 8c 08 64 b9 89 67 c9 ff d0 03 4c 1f aa c9 01 d0 06 20 8d 99 4c 1f aa 20 8d 99 b9 b1 67 29 0f c9 01 f0 03 4c 54 a9 98 48 0a a8 b9 57 65 8d 04 06 b9 58 65 8d 05 06 a9 03 8d 06 06 a9 00 8d 07 06 20 e2 9d b9 a7 65 38 ed 04 06 b9 a8 65 ed 05 06 b0 08 68 a8 20 b3 b5 4c 1f aa 68 a8 a2 00 b9 67 64 dd 3a aa d0 03 4c e8 a8 e8 e0 06 d0 f0 a2 00 b9 67 64 dd 40 aa d0 03 4c 18 a9 e8 e0 04 d0 f0 4c 3e a9 b9 b1 67 29 f0 d0 06 20 30 ad 4c 05 a9 ad d4 05 29 01 d0 06 20 44 aa 4c 05 a9 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 da ae 4c 1f aa 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 44 aa ad 09 64 c9 ff f0 06 20 be ae 4c 1f aa 20 da ae 4c 1f aa 20 44 aa ad 09 64 c9 ff f0 06 20 be ae 4c 1f aa 20 da ae 4c 1f aa c9 02 d0 18 a2 00 bd 8f 64 d9 d9 67 90 0b f0 09 e8 ec 13 64 d0 f0 4c 70 a9 4c 8b a8 b9 3f 64 c9 38 b0 03 4c a4 a9 b9 b1 67 29 f0 d0 06 20 30 ad 4c 97 a9 ad d4 05 29 01 d0 06 20 44 aa 4c 97 a9 20 3a ab ad 09 64 c9 ff f0 03 20 0c ae 4c 1f aa 98 48 0a a8 b9 57 65 8d 04 06 b9 58 65 8d 05 06 a9 03 8d 06 06 a9 00 8d 07 06 20 e2 9d b9 a7 65 38 ed 04 06 b9 a8 65 ed 05 06 b0 03 4c 1a aa 68 a8 b9 e7 66 f0 17 ad d4 05 29 01 d0 10 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 44 aa ad 09 64 c9 ff d0 19 98 48 0a a8 b9 a7 65 d9 57 65 d0 13 b9 a8 65 d9 58 65 d0 0b 68 a8 4c 1f aa 20 be ae 4c 1f aa 68 a8 20 b3 b5 ad 13 64 18 6d 15 64 38 e9 01 8d c7 05 88 cc c7 05 f0 03 4c 65 a8 68",
+      "meaning": "Group-2 decision tree; stages 0 and 1 both use this path"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A954",
+      "cpu_end_exclusive": "$A97A",
+      "bytes_hex": "c9 02 d0 18 a2 00 bd 8f 64 d9 d9 67 90 0b f0 09 e8 ec 13 64 d0 f0 4c 70 a9 4c 8b a8 b9 3f 64 c9 38 b0 03 4c a4 a9",
+      "meaning": "AI flag low nibble 2 compares player Y against $67D9 alert edge and can enter $A88B; $A970 separately sends types below $38 to $A9A4, including type 2"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A88B",
+      "cpu_end_exclusive": "$A8C0",
+      "bytes_hex": "98 48 0a a8 b9 57 65 8d 04 06 b9 58 65 8d 05 06 a9 03 8d 06 06 a9 00 8d 07 06 20 e2 9d b9 a7 65 38 ed 04 06 b9 a8 65 ed 05 06 b0 08 68 a8 20 b3 b5 4c 1f aa 68",
+      "meaning": "Low-nibble-1 units' one-third-HP rest gate; stage 0 has two such slots"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A8C0",
+      "cpu_end_exclusive": "$A955",
+      "bytes_hex": "a8 a2 00 b9 67 64 dd 3a aa d0 03 4c e8 a8 e8 e0 06 d0 f0 a2 00 b9 67 64 dd 40 aa d0 03 4c 18 a9 e8 e0 04 d0 f0 4c 3e a9 b9 b1 67 29 f0 d0 06 20 30 ad 4c 05 a9 ad d4 05 29 01 d0 06 20 44 aa 4c 05 a9 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 da ae 4c 1f aa 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 44 aa ad 09 64 c9 ff f0 06 20 be ae 4c 1f aa 20 da ae 4c 1f aa 20 44 aa ad 09 64 c9 ff f0 06 20 be ae 4c 1f aa 20 da ae 4c 1f aa c9",
+      "meaning": "Low-nibble-1 units' high-HP target and movement/technique dispatch"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A8E8",
+      "cpu_end_exclusive": "$A918",
+      "bytes_hex": "b9 b1 67 29 f0 d0 06 20 30 ad 4c 05 a9 ad d4 05 29 01 d0 06 20 44 aa 4c 05 a9 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 da ae 4c 1f aa",
+      "meaning": "Stage-0 $67B1 flag $01 invokes $AD30 target scan; absent target invokes $AEDA movement"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AC02",
+      "cpu_end_exclusive": "$AC03",
+      "bytes_hex": "00",
+      "meaning": "Type-0 range table entry is zero"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AC49",
+      "cpu_end_exclusive": "$AC4A",
+      "bytes_hex": "00",
+      "meaning": "Type-0 area table entry is zero"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AE0C",
+      "cpu_end_exclusive": "$AE1B",
+      "bytes_hex": "ac 08 64 b9 e7 66 d0 03 4c 6e ae a9 00 8d cd",
+      "meaning": "Technique executor immediately returns when type-0 skill ID is zero"
+    },
+    {
+      "bank": 3,
+      "cpu_start": "$F630",
+      "cpu_end_exclusive": "$F639",
+      "bytes_hex": "ee d3 05 ee d4 05 ad 05 68",
+      "meaning": "Frame routine increments $05D4, whose low bit steers some AI target scans"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A9A4",
+      "cpu_end_exclusive": "$AA1F",
+      "bytes_hex": "98 48 0a a8 b9 57 65 8d 04 06 b9 58 65 8d 05 06 a9 03 8d 06 06 a9 00 8d 07 06 20 e2 9d b9 a7 65 38 ed 04 06 b9 a8 65 ed 05 06 b0 03 4c 1a aa 68 a8 b9 e7 66 f0 17 ad d4 05 29 01 d0 10 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 44 aa ad 09 64 c9 ff d0 19 98 48 0a a8 b9 a7 65 d9 57 65 d0 13 b9 a8 65 d9 58 65 d0 0b 68 a8 4c 1f aa 20 be ae 4c 1f aa 68 a8 20 b3 b5",
+      "meaning": "Common group-2 branch in stages 0-2: one-third HP gate, adjacent target scan, ordinary attack"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A970",
+      "cpu_end_exclusive": "$A9A4",
+      "bytes_hex": "b9 3f 64 c9 38 b0 03 4c a4 a9 b9 b1 67 29 f0 d0 06 20 30 ad 4c 97 a9 ad d4 05 29 01 d0 06 20 44 aa 4c 97 a9 20 3a ab ad 09 64 c9 ff f0 03 20 0c ae 4c 1f aa",
+      "meaning": "Type >= $38 uses the friendly wounded-unit $AD30 scan when the high AI flag nibble is zero; otherwise NES frame parity chooses player/group-1 attack scans"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AD30",
+      "cpu_end_exclusive": "$ADF6",
+      "bytes_hex": "8a 48 98 48 ac 08 64 a9 ff 8d 09 64 a9 00 8d d0 60 ac 08 64 b9 3f 64 38 e9 38 b0 03 4c f1 ad aa bd f6 ad 8d 0f 67 bd 01 ae 8d 10 67 ad 13 64 18 6d 15 64 aa b9 b7 64 dd b7 64 90 0d b9 b7 64 38 fd b7 64 8d c7 05 4c 83 ad bd b7 64 38 f9 b7 64 8d c7 05 b9 8f 64 dd 8f 64 90 3e b9 8f 64 38 fd 8f 64 18 6d c7 05 cd 0f 67 f0 02 b0 41 8a 48 0a aa bd a8 65 dd 58 65 d0 0d bd a7 65 dd 57 65 d0 05 68 aa 4c de ad 68 aa 98 48 ac d0 60 8a 99 c8 60 ee d0 60 68 a8 4c de ad bd 8f 64 38 f9 8f 64 18 6d c7 05 cd 0f 67 f0 c4 b0 03 4c 9d ad ad d0 60 c9 08 b0 09 e8 ec 16 64 f0 03 4c 64 ad 20 24 9a 68 a8 68 aa 60",
+      "meaning": "High-type friendly-target search scans group-2 slots, permits self, rejects full HP, and selects the lowest-HP in-range candidate"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$96C7",
+      "cpu_end_exclusive": "$9796",
+      "bytes_hex": "8a 48 98 48 ad 10 67 c9 01 d0 0b a9 01 8d 12 64 20 41 9a 4c 3c 9a c9 05 f0 03 4c 96 97 a9 01 8d 12 64 ae 08 64 bd e7 66 c9 13 90 27 c9 22 f0 23 ad cd 05 d0 1e ad 13 64 18 6d 15 64 8d c7 05 ec c7 05 b0 1e a0 00 ad 13 64 18 6d 15 64 8d c8 05 4c 37 97 ad 13 64 18 6d 15 64 8d c7 05 ec c7 05 b0 e2 ad 13 64 18 6d 15 64 a8 ad 16 64 8d c8 05 ae 09 64 b9 b7 64 dd b7 64 d0 2a b9 8f 64 18 69 01 dd 8f 64 f0 0e b9 8f 64 38 e9 01 dd 8f 64 f0 03 4c 8a 97 8a 48 ae 12 64 98 9d 09 64 ee 12 64 68 aa 4c 8a 97 b9 8f 64 dd 8f 64 d0 16 b9 b7 64 18 69 01 dd b7 64 f0 dc b9 b7 64 38 e9 01 dd b7 64 f0 d1 c8 cc c8 05 d0 aa 20 41 9a 4c 3c 9a",
+      "meaning": "Healing area 5 selects center and same-faction orthogonal neighbors; damage uses opposing faction"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$9796",
+      "cpu_end_exclusive": "$98AB",
+      "bytes_hex": "c9 09 f0 03 4c ab 98 a9 01 8d 12 64 ae 08 64 bd e7 66 c9 13 90 27 c9 22 f0 23 ad cd 05 d0 1e ad 13 64 18 6d 15 64 8d c7 05 ec c7 05 b0 1e a0 00 ad 13 64 18 6d 15 64 8d c8 05 4c f0 97 ad 13 64 18 6d 15 64 8d c7 05 ec c7 05 b0 e2 ad 13 64 18 6d 15 64 a8 ad 16 64 8d c8 05 ae 09 64 b9 b7 64 dd b7 64 d0 2a b9 8f 64 18 69 01 dd 8f 64 f0 0e b9 8f 64 38 e9 01 dd 8f 64 f0 03 4c 9c 98 8a 48 ae 12 64 98 9d 09 64 ee 12 64 68 aa 4c 9c 98 b9 8f 64 dd 8f 64 d0 19 b9 b7 64 18 69 01 dd b7 64 f0 dc b9 b7 64 38 e9 01 dd b7 64 d0 03 4c 14 98 b9 8f 64 38 fd 8f 64 c9 01 f0 07 c9 ff f0 03 4c 74 98 b9 b7 64 18 69 01 dd b7 64 f0 0e b9 b7 64 38 e9 01 dd b7 64 f0 03 4c 9c 98 4c 14 98 b9 b7 64 38 fd b7 64 c9 01 f0 07 c9 ff f0 03 4c 9c 98 b9 8f 64 18 69 01 dd 8f 64 f0 e0 b9 8f 64 38 e9 01 dd 8f 64 f0 d5 c8 cc c8 05 f0 03 4c f3 97 20 41 9a 4c 3c 9a",
+      "meaning": "Area 9 additionally includes four diagonal neighbors, with selected center first"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$9A69",
+      "cpu_end_exclusive": "$9AC3",
+      "bytes_hex": "ae 08 64 bd e7 66 c9 13 90 50 c9 22 f0 4c ad cd 05 d0 47 a0 00 98 48 b9 09 64 0a a8 b9 a7 65 18 6d eb 05 99 a7 65 b9 a8 65 69 00 99 a8 65 b9 57 65 38 f9 a7 65 b9 58 65 f9 a8 65 b0 0c b9 58 65 99 a8 65 b9 57 65 99 a7 65 8c c8 05 20 58 9b 68 a8 c8 cc 12 64 d0 be 4c 57 9b",
+      "meaning": "Techniques 19-33 with variant zero add the effect magnitude to HP and clamp to maximum; technique 34 uses another path"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A9D3",
+      "cpu_end_exclusive": "$AA1F",
+      "bytes_hex": "68 a8 b9 e7 66 f0 17 ad d4 05 29 01 d0 10 20 3a ab ad 09 64 c9 ff f0 06 20 0c ae 4c 1f aa 20 44 aa ad 09 64 c9 ff d0 19 98 48 0a a8 b9 a7 65 d9 57 65 d0 13 b9 a8 65 d9 58 65 d0 0b 68 a8 4c 1f aa 20 be ae 4c 1f aa 68 a8 20 b3 b5",
+      "meaning": "Common-branch skill user tries range cast on one frame parity, then adjacent basic attack or wounded rest"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AC07",
+      "cpu_end_exclusive": "$AC08",
+      "bytes_hex": "02",
+      "meaning": "Type-5 technique range table entry is two cells"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AC4E",
+      "cpu_end_exclusive": "$AC4F",
+      "bytes_hex": "01",
+      "meaning": "Type-5 technique area table entry is one target"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$903F",
+      "cpu_end_exclusive": "$906F",
+      "bytes_hex": "ae 08 64 bd e7 66 38 e9 01 0a a8 b9 55 91 85 1a b9 56 91 85 1b ad cd 05 0a 0a a8 b1 1a 8d eb 05 c8 b1 1a 8d 0f 67 c8 b1 1a 8d 10 67 68 a8 68 aa",
+      "meaning": "Technique packet loader selects a variant using $05CD and stores effect magnitude in $05EB"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$9155",
+      "cpu_end_exclusive": "$9199",
+      "bytes_hex": "99 91 9c 91 9f 91 a2 91 a5 91 a8 91 ab 91 ae 91 b1 91 b4 91 b7 91 ba 91 bd 91 c0 91 c3 91 c6 91 c9 91 cc 91 cf 91 d7 91 df 91 e7 91 ef 91 f7 91 03 92 0f 92 1b 92 27 92 33 92 3f 92 4f 92 5f 92 6f 92 7f 92",
+      "meaning": "Pointers to 34 technique packets"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$9199",
+      "cpu_end_exclusive": "$919C",
+      "bytes_hex": "14 02 01",
+      "meaning": "Technique 1 packet: 20 effect magnitude, range two, area one"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$91CF",
+      "cpu_end_exclusive": "$91D7",
+      "bytes_hex": "14 02 01 00 19 02 01 00",
+      "meaning": "Technique 19 variants: 20/25 effect magnitude, range 2, area 1"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$9AC3",
+      "cpu_end_exclusive": "$9B57",
+      "bytes_hex": "a0 00 98 48 ad eb 05 d0 0c b9 09 64 a8 a9 01 99 89 67 4c 4c 9b b9 09 64 0a a8 b9 a7 65 38 ed eb 05 99 a7 65 b9 a8 65 e9 00 99 a8 65 b0 48 a9 00 99 a8 65 99 a7 65 98 4a a8 a9 ff 99 89 67 68 48 8d cb 05 a9 01 8d dc 60 8d de 60 a9 04 8d dd 60 20 50 ff ae 08 64 bd 61 67 8d c7 05 ad 08 64 0a aa bd f7 65 18 6d c7 05 9d f7 65 bd f8 65 69 00 9d f8 65 4c 4c 9b b9 a7 65 d0 08 b9 a8 65 d0 03 4c f9 9a 8c c8 05 20 58 9b 68 a8 c8 cc 12 64 f0 03 4c c5 9a",
+      "meaning": "Damage iterates the selected list, subtracts $05EB independently, clamps underflow and retires exact-zero HP targets"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$B5B3",
+      "cpu_end_exclusive": "$B5BA",
+      "bytes_hex": "ac 08 64 20 67 88 60",
+      "meaning": "Enemy low-HP action calls the ordinary rest routine"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AA44",
+      "cpu_end_exclusive": "$AABE",
+      "bytes_hex": "8a 48 98 48 ac 08 64 a9 ff 8d 09 64 a2 00 8e d0 60 bd b7 64 d9 b7 64 f0 03 4c 8a aa bd 8f 64 18 69 01 d9 8f 64 f0 0e bd 8f 64 38 e9 01 d9 8f 64 f0 03 4c a8 aa 98 48 ac d0 60 8a 99 c8 60 ee d0 60 68 a8 4c a8 aa bd 8f 64 d9 8f 64 d0 16 bd b7 64 18 69 01 d9 b7 64 f0 dc bd b7 64 38 e9 01 d9 b7 64 f0 d1 ad 13 64 18 6d 15 64 8d c7 05 e8 ec c7 05 d0 9d 20 24 9a 68 a8 68",
+      "meaning": "Collect orthogonally adjacent player/group-1 target slots"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$9A24",
+      "cpu_end_exclusive": "$9A7B",
+      "bytes_hex": "ad d0 60 f0 52 c9 01 d0 09 ad c8 60 8d 09 64 4c 7b 9a a2 00 a9 ff 8d d1 60 8d d2 60 bd c8 60 0a a8 b9 a7 65 8d d3 60 b9 a8 65 8d d4 60 ad d3 60 38 ed d1 60 ad d4 60 ed d2 60 b0 15 ad d3 60 8d d1 60 ad d4 60 8d d2 60 bd c8 60 8d 09 64 4c 75 9a e8 ec d0 60 d0 c5",
+      "meaning": "Choose lowest-current-HP candidate, preserving first slot on ties"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AEBE",
+      "cpu_end_exclusive": "$AED4",
+      "bytes_hex": "20 44 aa ad 09 64 c9 ff f0 03 20 dc 8d a9 04 8d d2 05 20 5c 9e 60",
+      "meaning": "Execute ordinary attack when adjacent target is available"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AEDA",
+      "cpu_end_exclusive": "$AF90",
+      "bytes_hex": "98 48 8a 48 ac 08 64 a9 01 8d f3 05 ae 08 64 bd 89 67 c9 01 d0 03 4c 71 af c9 ff f0 03 4c ff ae 68 aa 68 a8 60 a0 00 8c f4 05 b9 8f 64 c9 ff d0 04 c8 4c 04 af bd 8f 64 d9 8f 64 90 17 f0 27 bd 8f 64 38 f9 8f 64 8d f6 05 ad f4 05 09 08 8d f4 05 4c 40 af b9 8f 64 38 fd 8f 64 8d f6 05 ad f4 05 09 04 8d f4 05 bd b7 64 d9 b7 64 90 17 f0 27 bd b7 64 38 f9 b7 64 8d f5 05 ad f4 05 09 02 8d f4 05 4c 71 af b9 b7 64 38 fd b7 64 8d f5 05 ad f4 05 09 01 8d f4 05 a9 00 8d e4 05 a9 01 8d f7 05 ad f4 05 29 0c 8d cf 05 d0 0d ad f4 05 29 03 8d cf 05 a9 02 8d",
+      "meaning": "Movement routine begins by locating a player slot and choosing direction"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$AF90",
+      "cpu_end_exclusive": "$B020",
+      "bytes_hex": "f7 05 ad 18 06 8d 19 06 ad 16 06 8d 17 06 ad 02 68 8d 03 68 a9 00 8d cc 05 ad f7 05 d0 05 a9 80 8d cf 05 ad cf 05 29 8f c9 04 f0 03 4c 75 b1 ad 02 68 cd 01 68 f0 03 4c 8b b0 ad 18 06 48 ad 18 06 c9 e0 f0 16 68 8d 18 06 18 ad 18 06 48 69 10 8d 18 06 20 2f 8c ad e4 05 f0 5a 68 8d 18 06 ad e4 05 c9 02 d0 03 4c 83 b0 ad f7 05 c9 04 d0 03 4c 83 b0 c9 01 d0 14 ad f4 05 29 03 d0 02 a9 01 8d cf 05 a9 02 8d f7 05 4c a9 af ad f4 05 29 03",
+      "meaning": "Movement attempts use terrain checks and scroll state"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$B488",
+      "cpu_end_exclusive": "$B4AC",
+      "bytes_hex": "8a 48 ae 08 64 ad 18 06 4a 4a 4a 4a 18 6d 02 68 9d 8f 64 ad 16 06 4a 4a 4a 4a 9d b7 64 68 aa 20 27 a0 a9 03",
+      "meaning": "Movement routine writes final X/Y unit coordinates"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8867",
+      "cpu_end_exclusive": "$88DC",
+      "bytes_hex": "8a 48 ae 08 64 bd b7 64 0a 0a 0a 0a 8d 16 06 bd 8f 64 38 ed 02 68 0a 0a 0a 0a 8d 18 06 ad 08 64 0a aa bd 57 65 8d 04 06 bd 58 65 8d 05 06 a9 00 8d 07 06 a9 08 8d 06 06 20 e2 9d ad 04 06 18 7d a7 65 9d a7 65 bd a8 65 6d 05 06 9d a8 65 bd a8 65 dd 58 65 f0 05 b0 0e 4c dc 88 bd a7 65 dd 57 65 b0 03 4c dc 88 bd 58 65 9d a8 65 bd 57 65 9d a7 65 4c dc 88",
+      "meaning": "Rest: divide max HP by 8, add to current HP, cap at maximum"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$9DE2",
+      "cpu_end_exclusive": "$9E1F",
+      "bytes_hex": "48 8a 48 98 48 a9 00 8d 08 06 8d 09 06 a2 10 0e 04 06 2e 05 06 2e 08 06 2e 09 06 ad 08 06 38 ed 06 06 a8 ad 09 06 ed 07 06 90 09 ee 04 06 8d 09 06 8c 08 06 ca d0 d8 68 a8 68 aa 68 60",
+      "meaning": "Unsigned 16-bit integer division used by rest and damage"
+    },
+    {
+      "bank": 8,
+      "cpu_start": "$9AC0",
+      "cpu_end_exclusive": "$9B04",
+      "bytes_hex": "4c 57 9b a0 00 98 48 ad eb 05 d0 0c b9 09 64 a8 a9 01 99 89 67 4c 4c 9b b9 09 64 0a a8 b9 a7 65 38 ed eb 05 99 a7 65 b9 a8 65 e9 00 99 a8 65 b0 48 a9 00 99 a8 65 99 a7 65 98 4a a8 a9 ff 99 89 67 68 48 8d",
+      "meaning": "Write state 1 on one result path; write $FF when HP underflows"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$8FF0",
+      "cpu_end_exclusive": "$9001",
+      "bytes_hex": "f8 65 ac 09 64 a9 ff 99 89 67 a9 00 8d cb 05 20 05",
+      "meaning": "Write $FF to defeated target state"
+    },
+    {
+      "bank": 2,
+      "cpu_start": "$A2B8",
+      "cpu_end_exclusive": "$A2DF",
+      "bytes_hex": "ad 22 68 f0 21 8a 48 a2 00 ad ca 05 dd 16 68 f0 0b e8 ec 22 68 d0 f2 68 aa 4c de a2 68 aa a9 8c 9d 00 04 4c fb a2 ad",
+      "meaning": "Check slot-list membership when writing unit state"
+    }
+  ],
+  "unresolved": [
+    "Full meaning and entry paths for temporary $6789 state 1",
+    "Exact movement route and nearby-target behavior of the two stage-0 low-nibble-1 units",
+    "Exact $AB3A target filtering, other technique branches, and complete frame-dependent phase timing",
+    "Outcome transition and next-stage roster carryover after $839D"
+  ]
+}

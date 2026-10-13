@@ -1,0 +1,52 @@
+{
+  "source_prg_bank": 10,
+  "source_pointer_cpu": "$99A6",
+  "source_end_cpu_exclusive": "$9BC8",
+  "ppu_start_address": "$1010",
+  "segment_count": 5,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 538,
+  "payload_end_address_exclusive": "$122A",
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 34,
+  "preview_size": [
+    512,
+    96
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$99AA"
+    },
+    {
+      "index": 1,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$9AAB"
+    },
+    {
+      "index": 2,
+      "encoded_length": 2,
+      "decoded_length": 2,
+      "source_cpu": "$9BAC"
+    },
+    {
+      "index": 3,
+      "encoded_length": 8,
+      "decoded_length": 8,
+      "source_cpu": "$9BAF"
+    },
+    {
+      "index": 4,
+      "encoded_length": 16,
+      "decoded_length": 16,
+      "source_cpu": "$9BB8"
+    }
+  ],
+  "outputs": [
+    "rom_prg10_src_99a6_ppu_1010.bin",
+    "rom_prg10_src_99a6_ppu_1010_tiles.png"
+  ]
+}

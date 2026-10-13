@@ -1,0 +1,90 @@
+{
+  "source_prg_bank": 4,
+  "source_pointer_cpu": "$F756",
+  "source_end_cpu_exclusive": "$FADC",
+  "source_prg_bank_by_cpu_window": {
+    "$8000-$BFFF": 4,
+    "$C000-$FFFF": 5
+  },
+  "ppu_start_address": "$1010",
+  "segment_count": 7,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 892,
+  "payload_end_address_exclusive": "$138C",
+  "ppu_address_space_bytes": 16384,
+  "ppu_memory_regions_after_14bit_wrap": [
+    {
+      "ppu_start_address": "$1010",
+      "payload_offset": 0,
+      "byte_count": 892
+    }
+  ],
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 56,
+  "preview_size": [
+    512,
+    128
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$F75A"
+    },
+    {
+      "index": 1,
+      "encoded_length": 255,
+      "decoded_length": 255,
+      "source_cpu": "$F85B"
+    },
+    {
+      "index": 2,
+      "encoded_length": 33,
+      "decoded_length": 33,
+      "source_cpu": "$F95B"
+    },
+    {
+      "index": 3,
+      "encoded_length": 60,
+      "decoded_length": 60,
+      "source_cpu": "$F97D"
+    },
+    {
+      "index": 4,
+      "encoded_length": 31,
+      "decoded_length": 31,
+      "source_cpu": "$F9BA"
+    },
+    {
+      "index": 5,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$F9DA"
+    },
+    {
+      "index": 6,
+      "encoded_length": 1,
+      "decoded_length": 1,
+      "source_cpu": "$FADB"
+    }
+  ],
+  "chr_region_previews": [
+    {
+      "ppu_start_address": "$1010",
+      "payload_offset": 0,
+      "byte_count": 892,
+      "image_file": "rom_prg4_src_f756_ppu_1010_ppu_1010_tiles.png",
+      "tile_count_including_partial": 56,
+      "preview_size": [
+        512,
+        128
+      ]
+    }
+  ],
+  "outputs": [
+    "rom_prg4_src_f756_ppu_1010.bin",
+    "rom_prg4_src_f756_ppu_1010_tiles.png",
+    "rom_prg4_src_f756_ppu_1010_ppu_1010_tiles.png"
+  ]
+}

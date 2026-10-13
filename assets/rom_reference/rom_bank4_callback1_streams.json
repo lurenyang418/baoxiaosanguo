@@ -1,0 +1,70 @@
+{
+  "callback_bank": 4,
+  "callback_entry_cpu": "$8071",
+  "callback_index": 1,
+  "selector_ram": "$05ED",
+  "pointer_table_cpu": "$8088",
+  "stream_writer_cpu": "$8094",
+  "source_prg_banks_by_cpu_window": {
+    "$8000-$BFFF": 4,
+    "$C000-$FFFF": 5
+  },
+  "selector_count": 6,
+  "selection_meaning": "not yet confirmed",
+  "records": [
+    {
+      "selector": 0,
+      "source_pointer_cpu": "$D2C2",
+      "source_end_cpu_exclusive": "$D608",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 825,
+      "preview_file": "rom_prg4_src_d2c2_ppu_1010_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg4_src_d2c2_ppu_1010.json"
+    },
+    {
+      "selector": 1,
+      "source_pointer_cpu": "$DC46",
+      "source_end_cpu_exclusive": "$E035",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 996,
+      "preview_file": "rom_prg4_src_dc46_ppu_1010_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg4_src_dc46_ppu_1010.json"
+    },
+    {
+      "selector": 2,
+      "source_pointer_cpu": "$E36A",
+      "source_end_cpu_exclusive": "$E6EA",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 886,
+      "preview_file": "rom_prg4_src_e36a_ppu_1010_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg4_src_e36a_ppu_1010.json"
+    },
+    {
+      "selector": 3,
+      "source_pointer_cpu": "$E9BE",
+      "source_end_cpu_exclusive": "$EC6D",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 677,
+      "preview_file": "rom_prg4_src_e9be_ppu_1010_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg4_src_e9be_ppu_1010.json"
+    },
+    {
+      "selector": 4,
+      "source_pointer_cpu": "$F072",
+      "source_end_cpu_exclusive": "$F324",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 680,
+      "preview_file": "rom_prg4_src_f072_ppu_1010_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg4_src_f072_ppu_1010.json"
+    },
+    {
+      "selector": 5,
+      "source_pointer_cpu": "$F756",
+      "source_end_cpu_exclusive": "$FADC",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 892,
+      "preview_file": "rom_prg4_src_f756_ppu_1010_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg4_src_f756_ppu_1010.json"
+    }
+  ]
+}

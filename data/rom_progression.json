@@ -1,0 +1,984 @@
+{
+  "source": "Original ROM static control flow and tables",
+  "experience_arrays": {
+    "battle": "$65F7/$65F8",
+    "roster": "$652F/$6530"
+  },
+  "thresholds": {
+    "bank": 2,
+    "cpu": "$97AD",
+    "comparison_cpu": "$9657-$9675"
+  },
+  "branches": {
+    "selector_bank": 2,
+    "selector_cpu": "$983F",
+    "choices_bank": 10,
+    "pointer_cpu": "$901F",
+    "records": [
+      {
+        "selector": 0,
+        "choices": [
+          1,
+          3,
+          5
+        ],
+        "pointer_cpu": "$9039"
+      },
+      {
+        "selector": 1,
+        "choices": [
+          7,
+          10
+        ],
+        "pointer_cpu": "$903C"
+      },
+      {
+        "selector": 2,
+        "choices": [
+          13,
+          16
+        ],
+        "pointer_cpu": "$903E"
+      },
+      {
+        "selector": 3,
+        "choices": [
+          19,
+          22
+        ],
+        "pointer_cpu": "$9040"
+      },
+      {
+        "selector": 4,
+        "choices": [
+          25,
+          29
+        ],
+        "pointer_cpu": "$9042"
+      },
+      {
+        "selector": 5,
+        "choices": [
+          33,
+          37
+        ],
+        "pointer_cpu": "$9044"
+      },
+      {
+        "selector": 6,
+        "choices": [
+          41,
+          44
+        ],
+        "pointer_cpu": "$9046"
+      },
+      {
+        "selector": 7,
+        "choices": [
+          47,
+          50
+        ],
+        "pointer_cpu": "$9048"
+      },
+      {
+        "selector": 8,
+        "choices": [
+          53
+        ],
+        "pointer_cpu": "$904A"
+      },
+      {
+        "selector": 9,
+        "choices": [
+          57,
+          59
+        ],
+        "pointer_cpu": "$904B"
+      },
+      {
+        "selector": 10,
+        "choices": [
+          61
+        ],
+        "pointer_cpu": "$904D"
+      },
+      {
+        "selector": 11,
+        "choices": [
+          64
+        ],
+        "pointer_cpu": "$904E"
+      },
+      {
+        "selector": 12,
+        "choices": [
+          67
+        ],
+        "pointer_cpu": "$904F"
+      }
+    ]
+  },
+  "rewards": {
+    "attack_cpu": "bank2 $8F86-$8FA1",
+    "technique_cpu": "bank8 $9A41-$9A5E",
+    "kill_cpu": "bank2 $8FD4-$8FEF and bank8 $9B16-$9B33",
+    "interpretation": "Caster definition bytes 10/11/12; technique reward once per nonempty target list, kill reward per defeated target; accumulated 16-bit experience is not reset."
+  },
+  "hp_update": {
+    "cpu": "bank2 $9694-$96A7; bank10 $8F95-$8FAA; bank8 $81E9-$8200",
+    "interpretation": "New HP equals new maximum minus previous missing HP. Stat reload skips experience fields."
+  },
+  "limitations": "Static decoding; player command dispatcher checks promotion once after attack/technique. Original promotion presentation not reconstructed.",
+  "records": [
+    {
+      "unit_type_id": 0,
+      "next_experience_threshold": 100,
+      "branch_selector": 0,
+      "promotion_choices": [
+        1,
+        3,
+        5
+      ],
+      "movement_points": 2,
+      "attack_experience": 3,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 1,
+      "next_experience_threshold": 180,
+      "branch_selector": 255,
+      "promotion_choices": [
+        2
+      ],
+      "movement_points": 3,
+      "attack_experience": 3,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 2,
+      "next_experience_threshold": 300,
+      "branch_selector": 1,
+      "promotion_choices": [
+        7,
+        10
+      ],
+      "movement_points": 4,
+      "attack_experience": 3,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 3,
+      "next_experience_threshold": 180,
+      "branch_selector": 255,
+      "promotion_choices": [
+        4
+      ],
+      "movement_points": 2,
+      "attack_experience": 3,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 4,
+      "next_experience_threshold": 300,
+      "branch_selector": 2,
+      "promotion_choices": [
+        13,
+        16
+      ],
+      "movement_points": 2,
+      "attack_experience": 3,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 5,
+      "next_experience_threshold": 220,
+      "branch_selector": 255,
+      "promotion_choices": [
+        6
+      ],
+      "movement_points": 2,
+      "attack_experience": 3,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 6,
+      "next_experience_threshold": 400,
+      "branch_selector": 3,
+      "promotion_choices": [
+        19,
+        22
+      ],
+      "movement_points": 3,
+      "attack_experience": 3,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 7,
+      "next_experience_threshold": 500,
+      "branch_selector": 255,
+      "promotion_choices": [
+        8
+      ],
+      "movement_points": 4,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 8,
+      "next_experience_threshold": 750,
+      "branch_selector": 255,
+      "promotion_choices": [
+        9
+      ],
+      "movement_points": 5,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 9,
+      "next_experience_threshold": 1000,
+      "branch_selector": 4,
+      "promotion_choices": [
+        25,
+        29
+      ],
+      "movement_points": 5,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 10,
+      "next_experience_threshold": 500,
+      "branch_selector": 255,
+      "promotion_choices": [
+        11
+      ],
+      "movement_points": 5,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 11,
+      "next_experience_threshold": 800,
+      "branch_selector": 255,
+      "promotion_choices": [
+        12
+      ],
+      "movement_points": 5,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 12,
+      "next_experience_threshold": 950,
+      "branch_selector": 5,
+      "promotion_choices": [
+        33,
+        37
+      ],
+      "movement_points": 6,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 13,
+      "next_experience_threshold": 480,
+      "branch_selector": 255,
+      "promotion_choices": [
+        14
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 14,
+      "next_experience_threshold": 720,
+      "branch_selector": 255,
+      "promotion_choices": [
+        15
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 15,
+      "next_experience_threshold": 1000,
+      "branch_selector": 6,
+      "promotion_choices": [
+        41,
+        44
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 16,
+      "next_experience_threshold": 480,
+      "branch_selector": 255,
+      "promotion_choices": [
+        17
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 17,
+      "next_experience_threshold": 720,
+      "branch_selector": 255,
+      "promotion_choices": [
+        18
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 18,
+      "next_experience_threshold": 1000,
+      "branch_selector": 7,
+      "promotion_choices": [
+        47,
+        50
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 19,
+      "next_experience_threshold": 600,
+      "branch_selector": 255,
+      "promotion_choices": [
+        20
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 20,
+      "next_experience_threshold": 850,
+      "branch_selector": 255,
+      "promotion_choices": [
+        21
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 21,
+      "next_experience_threshold": 1100,
+      "branch_selector": 8,
+      "promotion_choices": [
+        53
+      ],
+      "movement_points": 4,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 22,
+      "next_experience_threshold": 880,
+      "branch_selector": 255,
+      "promotion_choices": [
+        23
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 23,
+      "next_experience_threshold": 2000,
+      "branch_selector": 255,
+      "promotion_choices": [
+        24
+      ],
+      "movement_points": 4,
+      "attack_experience": 6,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 24,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 4,
+      "attack_experience": 6,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 25,
+      "next_experience_threshold": 1320,
+      "branch_selector": 255,
+      "promotion_choices": [
+        26
+      ],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 26,
+      "next_experience_threshold": 1650,
+      "branch_selector": 255,
+      "promotion_choices": [
+        27
+      ],
+      "movement_points": 6,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 27,
+      "next_experience_threshold": 2300,
+      "branch_selector": 255,
+      "promotion_choices": [
+        28
+      ],
+      "movement_points": 6,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 28,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 7,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 29,
+      "next_experience_threshold": 1350,
+      "branch_selector": 255,
+      "promotion_choices": [
+        30
+      ],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 30,
+      "next_experience_threshold": 1700,
+      "branch_selector": 255,
+      "promotion_choices": [
+        31
+      ],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 31,
+      "next_experience_threshold": 2500,
+      "branch_selector": 255,
+      "promotion_choices": [
+        32
+      ],
+      "movement_points": 6,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 32,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 6,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 33,
+      "next_experience_threshold": 1300,
+      "branch_selector": 255,
+      "promotion_choices": [
+        34
+      ],
+      "movement_points": 6,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 34,
+      "next_experience_threshold": 1700,
+      "branch_selector": 255,
+      "promotion_choices": [
+        35
+      ],
+      "movement_points": 7,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 35,
+      "next_experience_threshold": 2300,
+      "branch_selector": 255,
+      "promotion_choices": [
+        36
+      ],
+      "movement_points": 7,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 36,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 8,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 37,
+      "next_experience_threshold": 1300,
+      "branch_selector": 255,
+      "promotion_choices": [
+        38
+      ],
+      "movement_points": 7,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 38,
+      "next_experience_threshold": 1700,
+      "branch_selector": 255,
+      "promotion_choices": [
+        39
+      ],
+      "movement_points": 7,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 39,
+      "next_experience_threshold": 2200,
+      "branch_selector": 255,
+      "promotion_choices": [
+        40
+      ],
+      "movement_points": 8,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 40,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 8,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 41,
+      "next_experience_threshold": 1350,
+      "branch_selector": 255,
+      "promotion_choices": [
+        42
+      ],
+      "movement_points": 3,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 42,
+      "next_experience_threshold": 2000,
+      "branch_selector": 255,
+      "promotion_choices": [
+        43
+      ],
+      "movement_points": 3,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 43,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 44,
+      "next_experience_threshold": 1400,
+      "branch_selector": 255,
+      "promotion_choices": [
+        45
+      ],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 45,
+      "next_experience_threshold": 2180,
+      "branch_selector": 255,
+      "promotion_choices": [
+        46
+      ],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 46,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 47,
+      "next_experience_threshold": 1400,
+      "branch_selector": 255,
+      "promotion_choices": [
+        48
+      ],
+      "movement_points": 3,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 48,
+      "next_experience_threshold": 2180,
+      "branch_selector": 255,
+      "promotion_choices": [
+        49
+      ],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 49,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 50,
+      "next_experience_threshold": 1400,
+      "branch_selector": 255,
+      "promotion_choices": [
+        51
+      ],
+      "movement_points": 3,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 51,
+      "next_experience_threshold": 2180,
+      "branch_selector": 255,
+      "promotion_choices": [
+        52
+      ],
+      "movement_points": 3,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 52,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 0,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 53,
+      "next_experience_threshold": 1400,
+      "branch_selector": 255,
+      "promotion_choices": [
+        54
+      ],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 54,
+      "next_experience_threshold": 2000,
+      "branch_selector": 255,
+      "promotion_choices": [
+        55
+      ],
+      "movement_points": 4,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 55,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 1
+    },
+    {
+      "unit_type_id": 56,
+      "next_experience_threshold": 100,
+      "branch_selector": 9,
+      "promotion_choices": [
+        57,
+        59
+      ],
+      "movement_points": 2,
+      "attack_experience": 2,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 57,
+      "next_experience_threshold": 260,
+      "branch_selector": 255,
+      "promotion_choices": [
+        58
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 58,
+      "next_experience_threshold": 520,
+      "branch_selector": 10,
+      "promotion_choices": [
+        61
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 59,
+      "next_experience_threshold": 280,
+      "branch_selector": 255,
+      "promotion_choices": [
+        60
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 60,
+      "next_experience_threshold": 520,
+      "branch_selector": 11,
+      "promotion_choices": [
+        64
+      ],
+      "movement_points": 3,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 61,
+      "next_experience_threshold": 850,
+      "branch_selector": 255,
+      "promotion_choices": [
+        62
+      ],
+      "movement_points": 4,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 62,
+      "next_experience_threshold": 1200,
+      "branch_selector": 255,
+      "promotion_choices": [
+        63
+      ],
+      "movement_points": 4,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 63,
+      "next_experience_threshold": 1400,
+      "branch_selector": 12,
+      "promotion_choices": [
+        67
+      ],
+      "movement_points": 5,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 64,
+      "next_experience_threshold": 800,
+      "branch_selector": 255,
+      "promotion_choices": [
+        65
+      ],
+      "movement_points": 4,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 65,
+      "next_experience_threshold": 1100,
+      "branch_selector": 255,
+      "promotion_choices": [
+        66
+      ],
+      "movement_points": 4,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 66,
+      "next_experience_threshold": 1400,
+      "branch_selector": 12,
+      "promotion_choices": [
+        67
+      ],
+      "movement_points": 5,
+      "attack_experience": 5,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 67,
+      "next_experience_threshold": 1700,
+      "branch_selector": 255,
+      "promotion_choices": [
+        68
+      ],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 68,
+      "next_experience_threshold": 2000,
+      "branch_selector": 255,
+      "promotion_choices": [
+        69
+      ],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 69,
+      "next_experience_threshold": 2600,
+      "branch_selector": 255,
+      "promotion_choices": [
+        70
+      ],
+      "movement_points": 5,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 70,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 6,
+      "attack_experience": 7,
+      "technique_experience": 5,
+      "kill_experience": 3
+    },
+    {
+      "unit_type_id": 71,
+      "next_experience_threshold": 65535,
+      "branch_selector": 255,
+      "promotion_choices": [],
+      "movement_points": 4,
+      "attack_experience": 0,
+      "technique_experience": 0,
+      "kill_experience": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "reference": "image5.png",
+  "runtime_image": "stage00_godot_runtime.png",
+  "reference_alignment": {
+    "scale": 4,
+    "crop_left_logical_pixels": 1,
+    "crop_top_logical_pixels": 8
+  },
+  "compared_region": {
+    "x": [
+      1,
+      254
+    ],
+    "y": [
+      8,
+      224
+    ]
+  },
+  "excluded": "16x16 cursor cell at (8,4); bottom demo status strip and crop boundaries",
+  "matched_pixels": 54862,
+  "compared_pixels": 54862,
+  "match_percent": 100.0,
+  "limitations": "Static reference frame only; excludes cursor and status UI. Does not validate animations or gameplay."
+}

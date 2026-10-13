@@ -1,0 +1,287 @@
+[
+  {
+    "stage": 1,
+    "image": "01.png",
+    "source": "assets/rom_reference/rom_stage00_composed_stage_chr_candidate_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 2,
+    "image": "02.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_01_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 3,
+    "image": "03.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_02_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 4,
+    "image": "04.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_03_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 5,
+    "image": "05.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_04_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 6,
+    "image": "06.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_05_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 7,
+    "image": "07.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_06_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 8,
+    "image": "08.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_07_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 9,
+    "image": "09.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_08_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 10,
+    "image": "10.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_09_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 11,
+    "image": "11.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_10_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 12,
+    "image": "12.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_11_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 13,
+    "image": "13.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_12_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 14,
+    "image": "14.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_13_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 15,
+    "image": "15.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_14_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 16,
+    "image": "16.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_15_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 17,
+    "image": "17.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_16_color.png",
+    "dimensions": [
+      256,
+      480
+    ],
+    "map_cells": [
+      16,
+      30
+    ],
+    "vertical_scroll_limit_cells": 15,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 18,
+    "image": "18.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_17_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  },
+  {
+    "stage": 19,
+    "image": "19.png",
+    "source": "assets/rom_reference/rom_battle_stage_candidate_18_color.png",
+    "dimensions": [
+      256,
+      720
+    ],
+    "map_cells": [
+      16,
+      45
+    ],
+    "vertical_scroll_limit_cells": 30,
+    "status": "ROM-derived color candidate, not pixel-verified against live game"
+  }
+]

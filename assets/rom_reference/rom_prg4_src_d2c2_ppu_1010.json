@@ -1,0 +1,108 @@
+{
+  "source_prg_bank": 4,
+  "source_pointer_cpu": "$D2C2",
+  "source_end_cpu_exclusive": "$D608",
+  "source_prg_bank_by_cpu_window": {
+    "$8000-$BFFF": 4,
+    "$C000-$FFFF": 5
+  },
+  "ppu_start_address": "$1010",
+  "segment_count": 10,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 825,
+  "payload_end_address_exclusive": "$1349",
+  "ppu_address_space_bytes": 16384,
+  "ppu_memory_regions_after_14bit_wrap": [
+    {
+      "ppu_start_address": "$1010",
+      "payload_offset": 0,
+      "byte_count": 825
+    }
+  ],
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 52,
+  "preview_size": [
+    512,
+    128
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$D2C6"
+    },
+    {
+      "index": 1,
+      "encoded_length": 1,
+      "decoded_length": 1,
+      "source_cpu": "$D3C7"
+    },
+    {
+      "index": 2,
+      "encoded_length": 1,
+      "decoded_length": 1,
+      "source_cpu": "$D3C9"
+    },
+    {
+      "index": 3,
+      "encoded_length": 1,
+      "decoded_length": 1,
+      "source_cpu": "$D3CB"
+    },
+    {
+      "index": 4,
+      "encoded_length": 1,
+      "decoded_length": 1,
+      "source_cpu": "$D3CD"
+    },
+    {
+      "index": 5,
+      "encoded_length": 3,
+      "decoded_length": 3,
+      "source_cpu": "$D3CF"
+    },
+    {
+      "index": 6,
+      "encoded_length": 7,
+      "decoded_length": 7,
+      "source_cpu": "$D3D3"
+    },
+    {
+      "index": 7,
+      "encoded_length": 124,
+      "decoded_length": 124,
+      "source_cpu": "$D3DB"
+    },
+    {
+      "index": 8,
+      "encoded_length": 175,
+      "decoded_length": 175,
+      "source_cpu": "$D458"
+    },
+    {
+      "index": 9,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$D508"
+    }
+  ],
+  "chr_region_previews": [
+    {
+      "ppu_start_address": "$1010",
+      "payload_offset": 0,
+      "byte_count": 825,
+      "image_file": "rom_prg4_src_d2c2_ppu_1010_ppu_1010_tiles.png",
+      "tile_count_including_partial": 52,
+      "preview_size": [
+        512,
+        128
+      ]
+    }
+  ],
+  "outputs": [
+    "rom_prg4_src_d2c2_ppu_1010.bin",
+    "rom_prg4_src_d2c2_ppu_1010_tiles.png",
+    "rom_prg4_src_d2c2_ppu_1010_ppu_1010_tiles.png"
+  ]
+}

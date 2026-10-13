@@ -1,0 +1,56 @@
+{
+  "source_prg_bank": 23,
+  "source_pointer_cpu": "$DB50",
+  "source_end_cpu_exclusive": "$DE74",
+  "source_prg_bank_by_cpu_window": {
+    "$8000-$BFFF": 22,
+    "$C000-$FFFF": 23
+  },
+  "ppu_start_address": "$0800",
+  "segment_count": 5,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 796,
+  "payload_end_address_exclusive": "$0B1C",
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 50,
+  "preview_size": [
+    512,
+    128
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$DB54"
+    },
+    {
+      "index": 1,
+      "encoded_length": 166,
+      "decoded_length": 166,
+      "source_cpu": "$DC55"
+    },
+    {
+      "index": 2,
+      "encoded_length": 6,
+      "decoded_length": 6,
+      "source_cpu": "$DCFC"
+    },
+    {
+      "index": 3,
+      "encoded_length": 112,
+      "decoded_length": 112,
+      "source_cpu": "$DD03"
+    },
+    {
+      "index": 4,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$DD74"
+    }
+  ],
+  "outputs": [
+    "rom_prg23_src_db50_ppu_0800.bin",
+    "rom_prg23_src_db50_ppu_0800_tiles.png"
+  ]
+}

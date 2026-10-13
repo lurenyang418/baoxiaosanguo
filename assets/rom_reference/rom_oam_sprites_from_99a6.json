@@ -1,0 +1,279 @@
+{
+  "candidate_stream": {
+    "source_prg_bank": 10,
+    "source_pointer_cpu": "$99A6",
+    "source_end_cpu_exclusive": "$9BC8",
+    "ppu_start_address": "$1010",
+    "segment_count": 5,
+    "segment_length_zero_means": 256,
+    "payload_bytes": 538,
+    "payload_end_address_exclusive": "$122A",
+    "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+    "tile_count_including_partial": 34,
+    "preview_size": [
+      512,
+      96
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "encoded_length": 0,
+        "decoded_length": 256,
+        "source_cpu": "$99AA"
+      },
+      {
+        "index": 1,
+        "encoded_length": 0,
+        "decoded_length": 256,
+        "source_cpu": "$9AAB"
+      },
+      {
+        "index": 2,
+        "encoded_length": 2,
+        "decoded_length": 2,
+        "source_cpu": "$9BAC"
+      },
+      {
+        "index": 3,
+        "encoded_length": 8,
+        "decoded_length": 8,
+        "source_cpu": "$9BAF"
+      },
+      {
+        "index": 4,
+        "encoded_length": 16,
+        "decoded_length": 16,
+        "source_cpu": "$9BB8"
+      }
+    ],
+    "outputs": [
+      "rom_prg10_src_99a6_ppu_1010.bin",
+      "rom_prg10_src_99a6_ppu_1010_tiles.png"
+    ]
+  },
+  "sprite_pattern_table_base_assumption": "$1000 (PPUCTRL bit 3 set for 8x8 sprites when $1000)",
+  "palette_source": "16-byte palette packet derived from each OAM template",
+  "records": [
+    {
+      "record": 0,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48,
+        56
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 1,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 2,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 3,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 4,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 5,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 6,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 7,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 8,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48,
+        56
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 9,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 10,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 11,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 12,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 13,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 14,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 15,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 16,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 17,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 18,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 19,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 20,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 21,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 22,
+      "missing_tile_ids_in_candidate_stream": [
+        40
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 23,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    },
+    {
+      "record": 24,
+      "missing_tile_ids_in_candidate_stream": [
+        40,
+        48
+      ],
+      "entries": 16,
+      "palette_source": "palette_packet_from_oam_template"
+    }
+  ],
+  "limitations": [
+    "Tiles absent from this candidate stream are shown with a magenta checker.",
+    "The OAM-to-stream residency and PPUCTRL state are candidate interpretations, not emulator-confirmed runtime state."
+  ]
+}

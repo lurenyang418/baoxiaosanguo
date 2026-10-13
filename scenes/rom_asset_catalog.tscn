@@ -1,0 +1,200 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg10_src_99a6_ppu_1010_tiles.png" id="1_tiles_99a6"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_c64a_ppu_1000_tiles.png" id="2_tiles_c64a"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_f4c8_ppu_0010_tiles.png" id="3_tiles_f4c8"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg10_src_9dba_ppu_1420_tiles.png" id="4_tiles_9dba"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_ca2e_ppu_1400_tiles.png" id="5_tiles_ca2e"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_ceb0_ppu_1a00_tiles.png" id="6_tiles_ceb0"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg11_src_cf64_ppu_0010_tiles.png" id="7_tiles_cf64"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_bank18_sprite_palettes.png" id="8_palettes"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg60_src_82bc_ppu_1000_tiles.png" id="9_boot_chr"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_bank18_oam_palette_packets.png" id="10_oam_palettes"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_oam_tile_candidates.png" id="11_oam_tiles"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_prg13_src_edad_ppu_3c9c_ppu_0000_tiles.png" id="12_selector26_chr"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_selector26_oam_composite.png" id="13_selector26_oam"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_bank6_glyph_pages.png" id="14_glyph_pages"]
+[ext_resource type="Texture2D" path="res://assets/rom_reference/rom_battle_stage_code_atlas.png" id="15_stage_codes"]
+
+[node name="RomAssetCatalog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+offset_right = 256.0
+offset_bottom = 240.0
+horizontal_scroll_mode = 3
+
+[node name="Items" type="VBoxContainer" parent="Scroll"]
+custom_minimum_size = Vector2(256, 0)
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="LabelBootChr" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Boot initialization · PRG bank 60 $82BC -> PPU $1000 (4096 bytes / 256 tiles)"
+
+[node name="BootChr" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 256)
+texture = ExtResource("9_boot_chr")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label99A6" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 10 $99A6 -> PPU $1010 (538 bytes)"
+
+[node name="Tiles99A6" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 48)
+texture = ExtResource("1_tiles_99a6")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelC64A" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 11 $C64A -> PPU $1000 (716 bytes)"
+
+[node name="TilesC64A" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 48)
+texture = ExtResource("2_tiles_c64a")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelCA2E" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 11 $CA2E -> PPU $1400 (256 bytes)"
+
+[node name="TilesCA2E" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 16)
+texture = ExtResource("5_tiles_ca2e")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelCEB0" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 11 $CEB0 -> PPU $1A00 (256 bytes)"
+
+[node name="TilesCEB0" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 16)
+texture = ExtResource("6_tiles_ceb0")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelCF64" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 11 $CF64 -> PPU $0010 (256 bytes)"
+
+[node name="TilesCF64" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 16)
+texture = ExtResource("7_tiles_cf64")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelF4C8" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 11 $F4C8 -> PPU $0010 (256 bytes)"
+
+[node name="TilesF4C8" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 16)
+texture = ExtResource("3_tiles_f4c8")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="Label9DBA" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 10 $9DBA -> PPU $1420 (256 bytes)"
+
+[node name="Tiles9DBA" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 16)
+texture = ExtResource("4_tiles_9dba")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelPalettes" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 18 records · sprite palettes 0/1"
+
+[node name="Palettes" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(216, 416)
+texture = ExtResource("8_palettes")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelOamPalettePackets" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "Bank 18 OAM templates · 16-byte palette packet staged at $3F10"
+
+[node name="OamPalettePackets" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(248, 416)
+texture = ExtResource("10_oam_palettes")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelOamTiles" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "OAM tile byte matches · selector 26 has a bank-12 CHR match"
+
+[node name="OamTileCandidates" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(136, 408)
+texture = ExtResource("11_oam_tiles")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelSelector26Chr" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Bank 12 $EDAD -> PPU $3C9C; post-wrap CHR bytes at $0000 (selector 26)"
+
+[node name="Selector26Chr" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 384)
+texture = ExtResource("12_selector26_chr")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelSelector26Oam" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(512, 18)
+text = "Selector 26 · 56-entry OAM composite (grayscale, offsets normalized)"
+
+[node name="Selector26Oam" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(196, 256)
+texture = ExtResource("13_selector26_oam")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelGlyphPages" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 18)
+text = "PRG bank 6 · four 128-tile glyph pages via $8586"
+
+[node name="GlyphPages" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(256, 128)
+texture = ExtResource("14_glyph_pages")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1
+
+[node name="LabelStageCodes" type="Label" parent="Scroll/Items"]
+custom_minimum_size = Vector2(808, 18)
+text = "19 stage map-code grids · 16×15 cells · hexadecimal IDs (debug colors, not ROM art)"
+
+[node name="StageCodeAtlas" type="TextureRect" parent="Scroll/Items"]
+custom_minimum_size = Vector2(808, 1018)
+texture = ExtResource("15_stage_codes")
+expand_mode = 1
+stretch_mode = 0
+texture_filter = 1

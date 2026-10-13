@@ -1,0 +1,176 @@
+{
+  "source_prg_bank": 0,
+  "source_cpu": "$C195",
+  "copied_by": "bank 0 $80C6-$80F4",
+  "destination_arrays": {
+    "unit_type_id": "$651B",
+    "unknown_value_low": "$652F",
+    "unknown_value_high": "$6530",
+    "experience_low": "$652F",
+    "experience_high": "$6530"
+  },
+  "entry_count": 20,
+  "interpretation": "Startup campaign roster seed. Movement points are joined from confirmed 13-byte unit definitions. This table does not establish which roster members appear in any particular battle or their on-map slots.",
+  "entries": [
+    {
+      "roster_index": 0,
+      "unit_type_id": 0,
+      "movement_allowance_points": 2,
+      "unknown_value_16bit": 60,
+      "experience": 60,
+      "source_cpu": "$C195"
+    },
+    {
+      "roster_index": 1,
+      "unit_type_id": 0,
+      "movement_allowance_points": 2,
+      "unknown_value_16bit": 95,
+      "experience": 95,
+      "source_cpu": "$C198"
+    },
+    {
+      "roster_index": 2,
+      "unit_type_id": 0,
+      "movement_allowance_points": 2,
+      "unknown_value_16bit": 90,
+      "experience": 90,
+      "source_cpu": "$C19B"
+    },
+    {
+      "roster_index": 3,
+      "unit_type_id": 0,
+      "movement_allowance_points": 2,
+      "unknown_value_16bit": 95,
+      "experience": 95,
+      "source_cpu": "$C19E"
+    },
+    {
+      "roster_index": 4,
+      "unit_type_id": 56,
+      "movement_allowance_points": 2,
+      "unknown_value_16bit": 30,
+      "experience": 30,
+      "source_cpu": "$C1A1"
+    },
+    {
+      "roster_index": 5,
+      "unit_type_id": 8,
+      "movement_allowance_points": 5,
+      "unknown_value_16bit": 600,
+      "experience": 600,
+      "source_cpu": "$C1A4"
+    },
+    {
+      "roster_index": 6,
+      "unit_type_id": 62,
+      "movement_allowance_points": 4,
+      "unknown_value_16bit": 920,
+      "experience": 920,
+      "source_cpu": "$C1A7"
+    },
+    {
+      "roster_index": 7,
+      "unit_type_id": 65,
+      "movement_allowance_points": 4,
+      "unknown_value_16bit": 800,
+      "experience": 800,
+      "source_cpu": "$C1AA"
+    },
+    {
+      "roster_index": 8,
+      "unit_type_id": 4,
+      "movement_allowance_points": 2,
+      "unknown_value_16bit": 180,
+      "experience": 180,
+      "source_cpu": "$C1AD"
+    },
+    {
+      "roster_index": 9,
+      "unit_type_id": 19,
+      "movement_allowance_points": 3,
+      "unknown_value_16bit": 480,
+      "experience": 480,
+      "source_cpu": "$C1B0"
+    },
+    {
+      "roster_index": 10,
+      "unit_type_id": 58,
+      "movement_allowance_points": 3,
+      "unknown_value_16bit": 320,
+      "experience": 320,
+      "source_cpu": "$C1B3"
+    },
+    {
+      "roster_index": 11,
+      "unit_type_id": 60,
+      "movement_allowance_points": 3,
+      "unknown_value_16bit": 380,
+      "experience": 380,
+      "source_cpu": "$C1B6"
+    },
+    {
+      "roster_index": 12,
+      "unit_type_id": 37,
+      "movement_allowance_points": 7,
+      "unknown_value_16bit": 1150,
+      "experience": 1150,
+      "source_cpu": "$C1B9"
+    },
+    {
+      "roster_index": 13,
+      "unit_type_id": 23,
+      "movement_allowance_points": 4,
+      "unknown_value_16bit": 920,
+      "experience": 920,
+      "source_cpu": "$C1BC"
+    },
+    {
+      "roster_index": 14,
+      "unit_type_id": 29,
+      "movement_allowance_points": 5,
+      "unknown_value_16bit": 1100,
+      "experience": 1100,
+      "source_cpu": "$C1BF"
+    },
+    {
+      "roster_index": 15,
+      "unit_type_id": 41,
+      "movement_allowance_points": 3,
+      "unknown_value_16bit": 1050,
+      "experience": 1050,
+      "source_cpu": "$C1C2"
+    },
+    {
+      "roster_index": 16,
+      "unit_type_id": 18,
+      "movement_allowance_points": 3,
+      "unknown_value_16bit": 740,
+      "experience": 740,
+      "source_cpu": "$C1C5"
+    },
+    {
+      "roster_index": 17,
+      "unit_type_id": 65,
+      "movement_allowance_points": 4,
+      "unknown_value_16bit": 900,
+      "experience": 900,
+      "source_cpu": "$C1C8"
+    },
+    {
+      "roster_index": 18,
+      "unit_type_id": 23,
+      "movement_allowance_points": 4,
+      "unknown_value_16bit": 920,
+      "experience": 920,
+      "source_cpu": "$C1CB"
+    },
+    {
+      "roster_index": 19,
+      "unit_type_id": 45,
+      "movement_allowance_points": 4,
+      "unknown_value_16bit": 1400,
+      "experience": 1400,
+      "source_cpu": "$C1CE"
+    }
+  ]
+}

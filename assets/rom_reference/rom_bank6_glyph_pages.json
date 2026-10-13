@@ -1,0 +1,67 @@
+{
+  "rom_sha256": "c3f6f08c08e325f41b0c683ad24096053753a94b9a1e6c4bda34dac13139a13f",
+  "source_prg_bank": 6,
+  "pointer_table_cpu": "$8586",
+  "tile_encoding": "NES 2bpp, 8x8 pixels, 16 bytes per tile",
+  "tiles_per_page": 128,
+  "atlas_layout": "four pages in a 2x2 grid; each page is 16x8 tiles",
+  "pages": [
+    {
+      "page_index": 0,
+      "pointer_cpu": "$8590",
+      "source_prg_offset": "$0590",
+      "atlas_origin_tiles": [
+        0,
+        0
+      ],
+      "tile_id_range": [
+        0,
+        127
+      ],
+      "all_zero": false
+    },
+    {
+      "page_index": 1,
+      "pointer_cpu": "$8D90",
+      "source_prg_offset": "$0D90",
+      "atlas_origin_tiles": [
+        16,
+        0
+      ],
+      "tile_id_range": [
+        128,
+        255
+      ],
+      "all_zero": false
+    },
+    {
+      "page_index": 2,
+      "pointer_cpu": "$9590",
+      "source_prg_offset": "$1590",
+      "atlas_origin_tiles": [
+        0,
+        8
+      ],
+      "tile_id_range": [
+        256,
+        383
+      ],
+      "all_zero": false
+    },
+    {
+      "page_index": 3,
+      "pointer_cpu": "$9D90",
+      "source_prg_offset": "$1D90",
+      "atlas_origin_tiles": [
+        16,
+        8
+      ],
+      "tile_id_range": [
+        384,
+        511
+      ],
+      "all_zero": false
+    }
+  ],
+  "interpretation": "Candidate dynamic text glyph pages based on visual contents and bank-6 PPU upload references; not yet linked to individual title or battle strings."
+}

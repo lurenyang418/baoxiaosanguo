@@ -1,0 +1,14 @@
+{
+  "source_prg_bank": 60,
+  "source_cpu": "$82BC",
+  "ppu_start_address": "$1000",
+  "payload_bytes": 4096,
+  "tile_count": 256,
+  "preview_size": [
+    512,
+    512
+  ],
+  "rom_sha256": "c3f6f08c08e325f41b0c683ad24096053753a94b9a1e6c4bda34dac13139a13f",
+  "evidence": "The bank-60 initialization routine copies $82BC-$92BB to PPU $1000-$1FFF.",
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview"
+}

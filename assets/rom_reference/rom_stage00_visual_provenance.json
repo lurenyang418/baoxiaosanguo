@@ -1,0 +1,164 @@
+{
+  "pattern_source": "ROM uploads decoded with one initial length and contiguous 256-byte blocks",
+  "reference": "image5.png",
+  "measured_palette": [
+    {
+      "nes_index": 14,
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "matching_samples": 8605,
+      "samples": 8612
+    },
+    {
+      "nes_index": 16,
+      "rgb": [
+        190,
+        190,
+        190
+      ],
+      "matching_samples": 25253,
+      "samples": 26126
+    },
+    {
+      "nes_index": 17,
+      "rgb": [
+        0,
+        113,
+        239
+      ],
+      "matching_samples": 4746,
+      "samples": 4746
+    },
+    {
+      "nes_index": 23,
+      "rgb": [
+        203,
+        77,
+        12
+      ],
+      "matching_samples": 1280,
+      "samples": 1280
+    },
+    {
+      "nes_index": 27,
+      "rgb": [
+        0,
+        146,
+        56
+      ],
+      "matching_samples": 1358,
+      "samples": 1358
+    },
+    {
+      "nes_index": 32,
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "matching_samples": 30,
+      "samples": 30
+    },
+    {
+      "nes_index": 48,
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "matching_samples": 4039,
+      "samples": 4198
+    },
+    {
+      "nes_index": 55,
+      "rgb": [
+        255,
+        219,
+        170
+      ],
+      "matching_samples": 9647,
+      "samples": 10292
+    }
+  ],
+  "sprites": [
+    {
+      "pose": "infantry",
+      "side_palette": "player",
+      "palette_nes_indices": [
+        16,
+        32,
+        17,
+        14
+      ],
+      "file": "rom_stage00_infantry_player_pose.png",
+      "source_cpu_tiles": [
+        "$8326",
+        "$8336",
+        "$83A6",
+        "$83B6"
+      ],
+      "source_bank": 4,
+      "runtime_oam_selection": "not yet traced; red pose assembly matched pixel-for-pixel against screenshot"
+    },
+    {
+      "pose": "infantry",
+      "side_palette": "enemy",
+      "palette_nes_indices": [
+        16,
+        32,
+        38,
+        14
+      ],
+      "file": "rom_stage00_infantry_pose.png",
+      "source_cpu_tiles": [
+        "$8326",
+        "$8336",
+        "$83A6",
+        "$83B6"
+      ],
+      "source_bank": 4,
+      "runtime_oam_selection": "not yet traced; red pose assembly matched pixel-for-pixel against screenshot"
+    },
+    {
+      "pose": "mounted",
+      "side_palette": "player",
+      "palette_nes_indices": [
+        16,
+        32,
+        17,
+        14
+      ],
+      "file": "rom_stage00_mounted_player_pose.png",
+      "source_cpu_tiles": [
+        "$8426",
+        "$8436",
+        "$8486",
+        "$8496"
+      ],
+      "source_bank": 4,
+      "runtime_oam_selection": "not yet traced; red pose assembly matched pixel-for-pixel against screenshot"
+    },
+    {
+      "pose": "mounted",
+      "side_palette": "enemy",
+      "palette_nes_indices": [
+        16,
+        32,
+        38,
+        14
+      ],
+      "file": "rom_stage00_mounted_pose.png",
+      "source_cpu_tiles": [
+        "$8426",
+        "$8436",
+        "$8486",
+        "$8496"
+      ],
+      "source_bank": 4,
+      "runtime_oam_selection": "not yet traced; red pose assembly matched pixel-for-pixel against screenshot"
+    }
+  ]
+}

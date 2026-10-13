@@ -1,0 +1,304 @@
+{
+  "callback_bank": 12,
+  "callback_entry_cpu": "$804E",
+  "callback_index": 1,
+  "selector_ram": "$05ED",
+  "pointer_table_cpu": "$8065",
+  "stream_writer_cpu": "$807F",
+  "source_prg_banks_by_cpu_window": {
+    "$8000-$BFFF": 12,
+    "$C000-$FFFF": 13
+  },
+  "selector_count": 13,
+  "unique_stream_count": 7,
+  "unit_type_graphics_lookup": {
+    "source_prg_bank": 2,
+    "source_cpu": "$983F",
+    "entry_count": 73,
+    "unmapped_value": "$FF",
+    "meaning": "unit type ID to $05ED graphics selector; the decoded stream pixels' rendered role remains under study"
+  },
+  "unit_ids_by_selector": {
+    "0": [
+      0
+    ],
+    "1": [
+      2
+    ],
+    "2": [
+      4
+    ],
+    "3": [
+      6
+    ],
+    "4": [
+      9
+    ],
+    "5": [
+      12
+    ],
+    "6": [
+      15
+    ],
+    "7": [
+      18
+    ],
+    "8": [
+      21
+    ],
+    "9": [
+      56
+    ],
+    "10": [
+      58
+    ],
+    "11": [
+      60
+    ],
+    "12": [
+      63,
+      66
+    ]
+  },
+  "unit_oam_graphic_selectors": {
+    "0": [
+      0
+    ],
+    "1": [
+      1
+    ],
+    "2": [
+      2
+    ],
+    "3": [
+      3
+    ],
+    "4": [
+      4
+    ],
+    "5": [
+      5
+    ],
+    "6": [
+      6
+    ],
+    "7": [
+      7
+    ],
+    "8": [
+      8
+    ],
+    "9": [
+      19
+    ],
+    "10": [
+      20
+    ],
+    "11": [
+      21
+    ],
+    "12": [
+      22,
+      23
+    ]
+  },
+  "records": [
+    {
+      "selector": 0,
+      "unit_ids": [
+        0
+      ],
+      "oam_graphic_selectors": [
+        0
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 1,
+      "unit_ids": [
+        2
+      ],
+      "oam_graphic_selectors": [
+        1
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 2,
+      "unit_ids": [
+        4
+      ],
+      "oam_graphic_selectors": [
+        2
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 3,
+      "unit_ids": [
+        6
+      ],
+      "oam_graphic_selectors": [
+        3
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 4,
+      "unit_ids": [
+        9
+      ],
+      "oam_graphic_selectors": [
+        4
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 5,
+      "unit_ids": [
+        12
+      ],
+      "oam_graphic_selectors": [
+        5
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 6,
+      "unit_ids": [
+        15
+      ],
+      "oam_graphic_selectors": [
+        6
+      ],
+      "source_pointer_cpu": "$D0FD",
+      "source_end_cpu_exclusive": "$D801",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d0fd_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d0fd_ppu_1010.json"
+    },
+    {
+      "selector": 7,
+      "unit_ids": [
+        18
+      ],
+      "oam_graphic_selectors": [
+        7
+      ],
+      "source_pointer_cpu": "$D751",
+      "source_end_cpu_exclusive": "$DE55",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_d751_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_d751_ppu_1010.json"
+    },
+    {
+      "selector": 8,
+      "unit_ids": [
+        21
+      ],
+      "oam_graphic_selectors": [
+        8
+      ],
+      "source_pointer_cpu": "$DE45",
+      "source_end_cpu_exclusive": "$E349",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "preview_file": "rom_prg12_src_de45_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_de45_ppu_1010.json"
+    },
+    {
+      "selector": 9,
+      "unit_ids": [
+        56
+      ],
+      "oam_graphic_selectors": [
+        19
+      ],
+      "source_pointer_cpu": "$E2A9",
+      "source_end_cpu_exclusive": "$E9AD",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1792,
+      "preview_file": "rom_prg12_src_e2a9_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_e2a9_ppu_1010.json"
+    },
+    {
+      "selector": 10,
+      "unit_ids": [
+        58
+      ],
+      "oam_graphic_selectors": [
+        20
+      ],
+      "source_pointer_cpu": "$E8DD",
+      "source_end_cpu_exclusive": "$ECE1",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1024,
+      "preview_file": "rom_prg12_src_e8dd_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_e8dd_ppu_1010.json"
+    },
+    {
+      "selector": 11,
+      "unit_ids": [
+        60
+      ],
+      "oam_graphic_selectors": [
+        21
+      ],
+      "source_pointer_cpu": "$ECC1",
+      "source_end_cpu_exclusive": "$F1C5",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "preview_file": "rom_prg12_src_ecc1_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_ecc1_ppu_1010.json"
+    },
+    {
+      "selector": 12,
+      "unit_ids": [
+        63,
+        66
+      ],
+      "oam_graphic_selectors": [
+        22,
+        23
+      ],
+      "source_pointer_cpu": "$F0E5",
+      "source_end_cpu_exclusive": "$F5E9",
+      "ppu_start_address": "$1010",
+      "payload_bytes": 1280,
+      "preview_file": "rom_prg12_src_f0e5_ppu_1010_tiles.png",
+      "metadata_file": "rom_prg12_src_f0e5_ppu_1010.json"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "source": "Controlled original ROM FCEUX 2.6.6 capture from stage-0 replay; stage counter set to 18 immediately before battle-clear transition; group-2 enemies cleared through RAM. This reaches the original final callback, not a naturally played stage-19 run.",
+  "rom": "../BaoXiaoSanGuo/BaoXiaoSanGuo(ES1005)(ChS)(970261).nes",
+  "callback_signature": "physical PRG bank 42 $8000: 4C 06 80; $8006 is callback 0",
+  "story_frames": [
+    4100,
+    4200,
+    4300,
+    4400,
+    4500,
+    4600,
+    4700,
+    4800,
+    4900,
+    5000,
+    5100,
+    5200,
+    5300,
+    5400,
+    5500,
+    5600,
+    5700,
+    5800,
+    5900,
+    6000,
+    6100,
+    6200,
+    6300
+  ],
+  "story_capture_interval_frames": 100,
+  "credit_on_capture_frames": [
+    6500,
+    7000,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000
+  ],
+  "credit_advance_input_frames": [
+    6700,
+    7700,
+    8700,
+    9700,
+    10700,
+    11700,
+    12700
+  ],
+  "credit_pages": 7,
+  "finale_frames": [
+    13000,
+    13500,
+    14000,
+    14500,
+    15000
+  ],
+  "notes": [
+    "The original story panels advance automatically. The A presses advance the credit pages. Captured frames include the original game image at 256x240, including pixels present at the bottom of the emulator image.",
+    "The first credit-off frame came from a no-input control run; later off frames came from the input run.",
+    "The same mapped bank-42 callback entry was also observed before the controlled final branch; frame 4012 is the entry after $6400 reached 19.",
+    "Frame 6500 finish card was captured in a no-story-input control run; the five illustrated panels advanced automatically in that run."
+  ],
+  "final_branch_callback_frame": 4012,
+  "story_finish_card_frame": 6500
+}

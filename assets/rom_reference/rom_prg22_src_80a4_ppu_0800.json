@@ -1,0 +1,56 @@
+{
+  "source_prg_bank": 22,
+  "source_pointer_cpu": "$80A4",
+  "source_end_cpu_exclusive": "$83EC",
+  "source_prg_bank_by_cpu_window": {
+    "$8000-$BFFF": 22,
+    "$C000-$FFFF": 23
+  },
+  "ppu_start_address": "$0800",
+  "segment_count": 5,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 832,
+  "payload_end_address_exclusive": "$0B40",
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 52,
+  "preview_size": [
+    512,
+    128
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$80A8"
+    },
+    {
+      "index": 1,
+      "encoded_length": 62,
+      "decoded_length": 62,
+      "source_cpu": "$81A9"
+    },
+    {
+      "index": 2,
+      "encoded_length": 4,
+      "decoded_length": 4,
+      "source_cpu": "$81E8"
+    },
+    {
+      "index": 3,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$81ED"
+    },
+    {
+      "index": 4,
+      "encoded_length": 254,
+      "decoded_length": 254,
+      "source_cpu": "$82EE"
+    }
+  ],
+  "outputs": [
+    "rom_prg22_src_80a4_ppu_0800.bin",
+    "rom_prg22_src_80a4_ppu_0800_tiles.png"
+  ]
+}

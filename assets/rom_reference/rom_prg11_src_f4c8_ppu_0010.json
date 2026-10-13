@@ -1,0 +1,28 @@
+{
+  "source_prg_bank": 11,
+  "source_pointer_cpu": "$F4C8",
+  "source_end_cpu_exclusive": "$F5CC",
+  "ppu_start_address": "$0010",
+  "segment_count": 1,
+  "segment_length_zero_means": 256,
+  "payload_bytes": 256,
+  "payload_end_address_exclusive": "$0110",
+  "decoded_as": "NES 2bpp 8x8 tiles, grayscale preview; last tile may be partial",
+  "tile_count_including_partial": 16,
+  "preview_size": [
+    512,
+    32
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "encoded_length": 0,
+      "decoded_length": 256,
+      "source_cpu": "$F4CC"
+    }
+  ],
+  "outputs": [
+    "rom_prg11_src_f4c8_ppu_0010.bin",
+    "rom_prg11_src_f4c8_ppu_0010_tiles.png"
+  ]
+}
