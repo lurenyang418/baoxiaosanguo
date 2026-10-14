@@ -54,7 +54,7 @@ sdkmanager --sdk_root="$HOME/Library/Android/sdk" "platform-tools" "build-tools;
 
 ## GitHub Actions 自动构建
 
-`.github/workflows/build.yml` 仅在推送 `v*` 格式的 tag 时运行，例如 `v0.1.0`。它会导出 macOS Apple Silicon/Intel DMG、Windows x64、Android ARM64 APK，以及未签名的 iOS Xcode 工程。成功后可在该次 Actions 运行的 Artifacts 中下载；构建产物保留 14 天。iOS 工程以 ZIP 上传，需在 Xcode 中配置签名后才能安装到设备。
+`.github/workflows/build.yml` 仅在推送 `v*` 格式的 tag 时运行，例如 `v0.0.1`。它会导出 macOS Apple Silicon/Intel DMG、Windows x64、Android ARM64 APK，以及未签名的 iOS Xcode 工程。成功后可在该次 Actions 运行的 Artifacts 中下载；构建产物保留 14 天。iOS 工程以 ZIP 上传，需在 Xcode 中配置签名后才能安装到设备。
 
 工作流使用 GitHub 托管的 macOS runner 执行现有构建脚本，因此 Windows 产物是交叉导出的 `.exe`，工作流不会代替 Windows 设备上的实际运行验收。Android 侧载包由 CI 临时生成的调试密钥签名，适用于验证安装；不同运行产生的 APK 不保证可覆盖安装。工作流不发布 GitHub Release，也不使用个人签名密钥。
 
