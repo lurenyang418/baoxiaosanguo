@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: build-${{ github.workflow }}-${{ github.ref }}
@@ -81,3 +81,17 @@ jobs:
             build/ios-xcode-project.zip
           if-no-files-found: error
           retention-days: 14
+
+      - name: 发布 GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          gh release create "$GITHUB_REF_NAME" \
+            build/BaoXiaoSanGuo-arm64.dmg \
+            build/BaoXiaoSanGuo-x86_64.dmg \
+            build/BaoXiaoSanGuo-windows-x64.exe \
+            build/android/baoxiaosanguo-release.apk \
+            build/ios-xcode-project.zip \
+            --title "爆笑三国 ${version}" \
+            --generate-notes
